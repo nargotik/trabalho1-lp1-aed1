@@ -9,7 +9,7 @@ Este trabalho foi realizado tentando aprimorar os meus conhecimentos a nível de
 
  - **Código Principal**
 	 - /questao**XX**/main.c **(Questão XX)**
-         - /questao**XX**/questao**XX**.h **(Header File da Questão XX)**
+	 - /questao**XX**/questao**XX**.h **(Header File da Questão XX)**
  - **Código Auxiliar**
 	 - /questao**XX**/funcoes**XX**.c (Funções utilizadas na função XX)
 
