@@ -11,6 +11,6 @@ OBJ = $(wildcard *.c)
 
 all:
 	$(CC) -o ../bin/$(shell basename $(CURDIR)) main.c $(CFLAGS)
-	
+	$(CC) -o ../bin/sensor sensor.c $(CFLAGS)
 clean:
 	rm bin/build
