@@ -111,7 +111,7 @@ int ler_idade(int pessoa)
     printf("Insira a idade da pessoa %d:", pessoa);
     scanf(" %d",&idade);
     
-   // getchar(); // Limpa \n do buffer stdin
+    getchar(); // Limpa \n do buffer stdin
     if (idade>=0 && idade<=120) {
         return idade;
     }
