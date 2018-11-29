@@ -25,7 +25,7 @@ int ler_idade(int pessoa);
  * @function    main
  * @abstract    Funcão principal
  */
-void main()
+int main(int argc , char* argv[])
 {
     // Soma das idades acima dos 20 anos 
     int soma_idades_20=0;

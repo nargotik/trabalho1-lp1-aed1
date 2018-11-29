@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-I.
+CFLAGS=-O3 -g3  -W -Wall -Wextra -Wuninitialized -Wstrict-aliasing
 # Define as dependencias
 DEPS = $(wildcard *.h)
 # Define os ficheiros c a incluir

@@ -24,7 +24,7 @@
 
 
 
-int main()
+int main(int argc , char* argv[])
 {
     int n=-1;
     do {
