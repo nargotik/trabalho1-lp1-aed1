@@ -10,12 +10,12 @@
  *              pares existentes no intervalo [0;n]
  * @author      Daniel Torres <a17442|at|alunos.ipca.pt>
  * @link        Daniel Torres GIT <https://github.com/nargotik>
- * @ref         some reference
  * @version     1.0 7 de Novembro de 2018
  */
 
 
 #include <stdio.h>
+// Reutiliza as funções da questao 3
 #include "../questao03/funcoes03.h"
 #include "funcoes08.h"
 

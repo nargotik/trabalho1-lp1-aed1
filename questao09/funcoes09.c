@@ -8,26 +8,6 @@
 
 
 /**
- * Função para verificar se um numero é par
- * 
- * @param value valor a verificar
- * @return 1 se par 
- */
-int is_par(int value) {
-    return(( value % 2 ) == 0 );
-}
-
-/**
- * Função para verificar se um numero é impar
- * 
- * @param value valor a verificar
- * @return 1 se impar 
- */
-int is_impar(int value) {
-    return(( value % 2 ) != 0 );
-}
-
-/**
  * Função somatorio questao 08
  * @param numero Numero processar
  * @return somatorio dos pares

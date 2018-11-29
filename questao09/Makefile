@@ -10,7 +10,6 @@ OBJ = $(wildcard *.c)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 all:
-	$(CC) -o ../bin/$(shell basename $(CURDIR)) *.c $(CFLAGS)
-	
+	$(CC) -o ../bin/$(shell basename $(CURDIR)) $(OBJ) ../questao03/funcoes03.c $(CFLAGS)
 clean:
 	rm bin/build

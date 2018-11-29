@@ -8,10 +8,6 @@
 #ifndef FUNCOES09_H
 #define FUNCOES09_H
 
-int is_par(int value);
-
-int is_impar(int value);
-
 unsigned int somatorio_recursivo(int numero);
 
 
