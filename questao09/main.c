@@ -9,8 +9,6 @@
 
 
 #include <stdio.h>
-// Reutiliza as funções da questao 3
-#include "../questao03/funcoes03.h"
 
 #include "funcoes09.h"
 

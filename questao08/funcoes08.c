@@ -6,7 +6,8 @@
  * @version     1.0 7 de Novembro de 2018
  */
 
-
+// Reutiliza as funções da questao 3
+#include "../questao03/funcoes03.h"
 
 /**
  * Função somatorio questao 08 usando uma subrotina
