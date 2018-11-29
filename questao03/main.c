@@ -22,7 +22,7 @@ int main(int argc , char* argv[])
     int n=-1;
     do {
         printf("Indique um numero inteiro:");
-        scanf("%d",&n);
+        scanf(" %d",&n);
         getchar(); // Limpa \n do buffer stdin
     } while (!( n>=0 ));
     

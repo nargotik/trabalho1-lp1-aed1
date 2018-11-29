@@ -8,20 +8,10 @@ Este trabalho foi realizado tentando aprimorar os meus conhecimentos a nível de
 ## Ficheiros
 
  - **Código Principal**
-	 - /questao01/main.c **(Questão 01)**
-	 - /questao02/main.c **(Questão 02)**
-	 - /questao03/main.c **(Questão 03)**
-	 - /questao04/main.c **(Questão 04)**
-	 - /questao05/main.c **(Questão 05)**
-	 - /questao06/main.c **(Questão 06)**
-	 - /questao07/main.c **(Questão 07)**
-	 - /questao08/main.c **(Questão 08)**
-	 - /questao09/main.c **(Questão 09)**
-	 - /questao10/main.c **(Questão 10)**
-	 - /questao11/main.c **(Questão 11)**
-	 - /questao12/main.c **(Questão 12)**
+	 - /questao**XX**/main.c **(Questão XX)**
+         - /questao**XX**/questao**XX**.h **(Header File da Questão XX)**
  - **Código Auxiliar**
-	 - /include/questaoXX.h
+	 - /questao**XX**/funcoes**XX**.c (Funções utilizadas na função XX)
 
 
 
@@ -222,7 +212,7 @@ Para evocar a função pode ser da seguinte forma:
 ```c
 	int *numeros_aleatorios;
     // Chama função que gera a quantidade necessaria.
-    numeros_aleatorios = geraSequencia(NUMERO_MIN, NUMERO_MAX, NUMEROS);
+    numeros_aleatorios = gera_sequencia(NUMERO_MIN, NUMERO_MAX, NUMEROS);
 ```
 
 ### Estrutura do Main:
