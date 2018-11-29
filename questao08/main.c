@@ -15,8 +15,10 @@
 
 
 #include <stdio.h>
+
 // Reutiliza as funções da questao 3
 #include "../questao03/funcoes03.h"
+
 #include "funcoes08.h"
 
 
@@ -28,7 +30,7 @@ int main()
     do {
         printf("Indique um numero inteiro:");
         scanf(" %d",&n);
-        getchar();
+        //getchar();
     } while (!( n>=0 ));
     
     printf("Soma dos pares: %u - ",somatorio(n));

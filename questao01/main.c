@@ -109,9 +109,9 @@ int ler_idade(int pessoa)
     int idade = -999;
     // Pessoa pessoa
     printf("Insira a idade da pessoa %d:", pessoa);
-    scanf(" %d%*c",&idade);
+    scanf(" %d",&idade);
     
-    getchar(); // Limpa \n do buffer stdin
+   // getchar(); // Limpa \n do buffer stdin
     if (idade>=0 && idade<=120) {
         return idade;
     }
