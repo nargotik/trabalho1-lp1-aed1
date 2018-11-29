@@ -19,10 +19,11 @@
 
 int main()
 {
-    int n;
+    int n=-1;
     do {
         printf("Indique um numero inteiro:");
         scanf("%d",&n);
+        getchar(); // Limpa \n do buffer stdin
     } while (!( n>=0 ));
     
     unsigned int somatorio=0;
@@ -35,6 +36,6 @@ int main()
     }
 
     
-    printf("Somatorio dos pares: %u - ",somatorio );
+    printf("Somatorio dos pares: %u - \n",somatorio );
 }
 

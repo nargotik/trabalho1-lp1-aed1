@@ -13,7 +13,9 @@
  */
 
 #include <stdio.h>
+
 #include "questao07.h"
+
 #include "funcoes07.h"
 
 

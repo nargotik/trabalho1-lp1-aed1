@@ -8,8 +8,6 @@
 #ifndef QUESTAO02_H
 #define QUESTAO02_H
 
-#include <stdio.h>
-#include <string.h>
 
 // Declaração de constantes
 const char* descricao_conta[5] = { 

@@ -36,6 +36,8 @@
 
 
 
+#include <stdio.h>
+#include <string.h>
 
 #include "questao02.h"
 
