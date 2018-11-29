@@ -7,6 +7,8 @@
  * @version     1.0 7 de Novembro de 2018
  */
 
+#include "funcoes04.h"
+
 
 /**
  * Retorna e calcula a maior capicua da multiplicacao de 2 numeros
