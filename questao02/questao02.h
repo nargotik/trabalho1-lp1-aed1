@@ -1,4 +1,3 @@
-
 /* 
  * File:   questao02.h
  * Author: Daniel Torres <a17442|at|alunos.ipca.pt>
@@ -29,7 +28,10 @@ const int premio_conta[5] = {
 };
 const int numero_contas = sizeof(descricao_conta) / sizeof(char*);
 
-
+int ler_anos();
+float ler_saldo();
+int ler_codigoconta();
+void mostra_opcoes();
 
 
 #endif /* QUESTAO02_H */

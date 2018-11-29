@@ -1,6 +1,6 @@
 /*!
  * @header      main.c
- * @abstract    Questão02.
+ * @abstract    Questao02 do trabalho pratico
  * @discussion  Uma instituição bancária pretende oferecer aos 
  *              seus melhores e mais antigos clientes um 
  *              prémio em juros de 1% sobre o saldo médio da sua 
@@ -39,11 +39,6 @@
 
 #include "questao02.h"
 
-// Declaração de funções
-int ler_anos();
-float ler_saldo();
-int ler_codigoconta();
-void mostra_opcoes();
 
 
 /*!

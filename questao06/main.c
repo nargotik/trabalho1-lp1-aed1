@@ -26,10 +26,7 @@
 
 /*!
  * @function    main
- * @abstract    main program function.
- * @param       argc    ....
- * @param       argv     ....
- * @result      An integer result of this function.
+ * @todo
  */
 int main(int argc, char** argv)
 {

@@ -16,7 +16,9 @@
 
 
 #include <stdio.h>
+#include "../questao03/funcoes03.h"
 #include "funcoes08.h"
+
 
 
 

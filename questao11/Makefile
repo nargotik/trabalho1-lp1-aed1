@@ -1,9 +1,9 @@
 CC=gcc
 CFLAGS=-I.
 # Define as dependencias
-DEPS = $(wildcard *.h) ../questao03/funcoes03.h
+DEPS = $(wildcard *.h)
 # Define os ficheiros c a incluir
-OBJ = $(wildcard *.c) ../questao03/funcoes03.c
+OBJ = $(wildcard *.c)
 
 
 %.o: %.c $(DEPS)

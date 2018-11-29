@@ -1,8 +1,6 @@
 /*!
  * @header      funcoes.c
  * @abstract    Funcoes da Questao04
- * @discussion  
- *              
  * @author      Daniel Torres <a17442|at|alunos.ipca.pt>
  * @version     1.0 7 de Novembro de 2018
  */

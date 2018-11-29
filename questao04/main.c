@@ -5,7 +5,6 @@
  *              
  * @author      Daniel Torres <a17442|at|alunos.ipca.pt>
  * @link        Daniel Torres GIT <https://github.com/nargotik>
- * @ref         some reference
  * @version     1.0 7 de Novembro de 2018
  */
 

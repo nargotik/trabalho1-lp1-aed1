@@ -14,8 +14,6 @@
 #ifndef FUNCOES08_H
 #define FUNCOES08_H
 
-int is_par(int value);
-int is_impar(int value);
 unsigned int somatorio(int numero);
 
 
