@@ -3,14 +3,14 @@ CFLAGS=-I.
 # Define as dependencias
 DEPS = $(wildcard *.h)
 # Define os ficheiros c a incluir
-OBJ = $(wildcard *.c)
-
+OBJ = $(filter-out main-sensor.c,$(wildcard *.c))
+OBJSENSOR = $(filter-out main.c,$(wildcard *.c))
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 all:
-	$(CC) -o ../bin/$(shell basename $(CURDIR)) main.c $(CFLAGS)
-	$(CC) -o ../bin/$(shell basename $(CURDIR))-sensor sensor.c $(CFLAGS)
+	$(CC) -o ../bin/$(shell basename $(CURDIR)) ($OBJ) $(CFLAGS)
+	$(CC) -o ../bin/$(shell basename $(CURDIR))-sensor ($OBJSENSOR) $(CFLAGS)
 clean:
 	rm bin/build
