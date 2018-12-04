@@ -26,8 +26,7 @@
  */
 int main(int argc , char* argv[])
 {
-    // Nao necessario o uso de array no entanto foi utilizado com vista 
-    // a uma possivel futura utilizacao da sequencia
+    // Array de armazenamento dos numeros
     int *numeros_aleatorios;
     
     // Guarda o estado se é primo ou nao

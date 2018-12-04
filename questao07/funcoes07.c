@@ -39,7 +39,7 @@ bool is_prime(int n) {
     // Caso nao seja um caso destes itera
     // Para i=19 ate i<=sqrt(n)
     int tocheck = sqrt(n);//n / 2; // se n>n/2 entao n % n > 0
-    for (int i = 19; i < tocheck; i = i + 2) { // Os pares ja foram todos verificados
+    for (int i = 19; i <= tocheck; i = i + 2) { // Os pares ja foram todos verificados
         // Verifica se é divisivel por i
         if (n % i ==0)
             return false;

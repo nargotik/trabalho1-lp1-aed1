@@ -26,8 +26,7 @@ Com esta aplicação temos a clara noção da vantagem dos ciclos em programaç�
 Esta questão trata-se de uma abordagem um pouco mais complexa à utilização de instruções condicionais, dada a complexidade do enunciado.
 São pedidos 3 dados ao utilizador e mediante as condições que nos são indicadas no enunciado são calculados prémios a atribuir a uma dada conta bancária.
 Podemos com esta questão tirar a conclusão de que devemos esquematizar as condições lógicas de forma a que se tornem de simples compreensão, comentando claramente as condições lógicas utilizadas de forma a que seja facilmente modificável.
-```mermaid
-```
+
 
 ```mermaid
 graph LR

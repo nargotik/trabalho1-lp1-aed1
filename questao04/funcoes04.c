@@ -18,23 +18,34 @@
  */
 unsigned int maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *maior2) {
     // Variavel para armazenar multiplciacao
-    unsigned int multiplicacao,capicua=0;
-    for (int primeiro = de; primeiro<=ate; primeiro++) {
-
-        for (int segundo = de; segundo<=ate; segundo++) {
+    unsigned int multiplicacao,maior_capicua=0;
+    multiplicacao = ate*ate;
+    if ( is_capicua(multiplicacao) ) {
+        *maior1 = ate;
+        *maior2 = ate;
+        maior_capicua = multiplicacao;
+    }
+    for (int primeiro = ate; primeiro > de; primeiro--) {
+        
+        // Se a multiplicacao for menos que a maior capicua sai fora
+        multiplicacao = primeiro * (primeiro-1);
+        if ( multiplicacao < maior_capicua) break;
+        
+        
+        for (int segundo = (primeiro-1); segundo > de; segundo--) {
             multiplicacao = primeiro * segundo;
             
             // Verifica se o numero multiplicado é igual ao invertido.
             
-            if ( is_capicua(multiplicacao) ) {
+            if ( is_capicua(multiplicacao) && multiplicacao > maior_capicua ) {
                 *maior1 = primeiro;
                 *maior2 = segundo;
-                capicua = multiplicacao;
+                maior_capicua = multiplicacao;
             }
             
         }
     }
-    return capicua;
+    return maior_capicua;
 }
 
 
