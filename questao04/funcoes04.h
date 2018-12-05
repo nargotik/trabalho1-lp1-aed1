@@ -15,7 +15,7 @@ tipo_capicua maior_capicua(int de,int ate,unsigned int *maior1,unsigned int *mai
 
 tipo_capicua inverte(tipo_capicua valor);
 
-tipo_capicua is_capicua(tipo_capicua numero);
+int is_capicua(tipo_capicua numero);
 
 #endif /* QUESTAO04_H */
 
