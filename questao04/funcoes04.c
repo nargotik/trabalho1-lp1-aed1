@@ -20,7 +20,7 @@ tipo_capicua maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *ma
     // Variavel para armazenar multiplciacao
     unsigned long int multiplicacao,maior_capicua=0;
     
-    //int ciclos=0; // For benchmarking
+    int ciclos=0; // For benchmarking
     
     // Verifica se o até*até é a maior capicua
     multiplicacao = ate*ate;
@@ -38,7 +38,7 @@ tipo_capicua maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *ma
         
         // Apenas vai testar a multiplicacao do primeiro * primeiro-1....de
         for (int segundo = (primeiro-1); segundo >= de; segundo--) {
-            //ciclos++; // For benchmarking
+            ciclos++; // For benchmarking
             
             // Se a multiplicacao for menos que a maior capicua sai fora do for
             multiplicacao = primeiro * segundo;
@@ -54,7 +54,7 @@ tipo_capicua maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *ma
             
         }
     }
-    //printf("ciclos: %d",ciclos);
+    printf("ciclos: %d\n",ciclos);
     /* BenchMarks
      * 
      * Maior capicua de 100 a 999
@@ -95,6 +95,6 @@ tipo_capicua inverte(tipo_capicua valor)
  * @param numero
  * @return valor booleano da opecação
  */
-tipo_capicua is_capicua(tipo_capicua numero) {
+int is_capicua(tipo_capicua numero) {
     return (inverte(numero) == numero);
 }
