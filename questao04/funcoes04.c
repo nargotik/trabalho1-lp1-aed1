@@ -23,7 +23,7 @@ tipo_capicua maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *ma
     int ciclos=0; // For benchmarking
     
     // Verifica se o até*até é a maior capicua
-    multiplicacao = ate*ate;
+    multiplicacao = (tipo_capicua)ate*ate;
     if ( is_capicua(multiplicacao) ) {
         *maior1 = ate;
         *maior2 = ate;
@@ -33,7 +33,7 @@ tipo_capicua maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *ma
     for (int primeiro = ate; primeiro >= de; primeiro--) {
         
         // Se a multiplicacao for menos que a maior capicua faz break e nao faz proximo for
-        multiplicacao = primeiro * (primeiro-1);
+        multiplicacao = (tipo_capicua)primeiro * (primeiro-1);
         if ( multiplicacao < maior_capicua) break;
         
         // Apenas vai testar a multiplicacao do primeiro * primeiro-1....de
@@ -41,7 +41,7 @@ tipo_capicua maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *ma
             ciclos++; // For benchmarking
             
             // Se a multiplicacao for menos que a maior capicua sai fora do for
-            multiplicacao = primeiro * segundo;
+            multiplicacao = (tipo_capicua)primeiro * segundo;
             if ( multiplicacao < maior_capicua) break;
             
             // Verifica se o numero multiplicado é igual ao invertido.
@@ -60,6 +60,11 @@ tipo_capicua maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *ma
      * Maior capicua de 100 a 999
      * Ciclos: 6116 vs 810000(900^2)
      * Maior capicua 993 x 913 = 906609
+     * 
+     * 
+     * Maior capicua de 1000 a 9999
+     * Ciclos: 2499 vs 81000000(9000^2)
+     * Maior capicua 9999 x 9901 = 99000099
      * 
      */
     return maior_capicua;
