@@ -16,7 +16,7 @@
  * @param maior2 apontador para armazenar o segundo valor maior
  * @return maior capicua da multiplicacao de 2 numeros
  */
-tipo_capicua maior_capicua(tipo_capicua de, tipo_capicua ate,tipo_capicua *maior1,tipo_capicua *maior2) {
+tipo_capicua maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *maior2) {
     // Variavel para armazenar multiplciacao
     tipo_capicua multiplicacao,maior_capicua=0;
     
@@ -30,14 +30,14 @@ tipo_capicua maior_capicua(tipo_capicua de, tipo_capicua ate,tipo_capicua *maior
         maior_capicua = multiplicacao;
     }
     
-    for (tipo_capicua primeiro = ate; primeiro >= de; primeiro--) {
+    for (int primeiro = ate; primeiro >= de; primeiro--) {
         
         // Se a multiplicacao for menos que a maior capicua faz break e nao faz proximo for
         multiplicacao = (tipo_capicua)primeiro * (primeiro-1);
         if ( multiplicacao < maior_capicua) break;
         
         // Apenas vai testar a multiplicacao do primeiro * primeiro-1....de
-        for (tipo_capicua segundo = (primeiro-1); segundo >= de; segundo--) {
+        for (int segundo = (primeiro-1); segundo >= de; segundo--) {
             ciclos++; // For benchmarking
             
             // Se a multiplicacao for menos que a maior capicua sai fora do for
