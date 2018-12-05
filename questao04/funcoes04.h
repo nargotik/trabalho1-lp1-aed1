@@ -10,7 +10,7 @@
 #define FUNCOES04_H
 
 
-unsigned int maior_capicua(int de,int ate,unsigned int *maior1,unsigned int *maior2);
+long double maior_capicua(int de,int ate,unsigned int *maior1,unsigned int *maior2);
 
 int inverte(int valor);
 
