@@ -18,7 +18,7 @@
  */
 tipo_capicua maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *maior2) {
     // Variavel para armazenar multiplciacao
-    unsigned long int multiplicacao,maior_capicua=0;
+    tipo_capicua multiplicacao,maior_capicua=0;
     
     int ciclos=0; // For benchmarking
     
