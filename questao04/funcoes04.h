@@ -9,7 +9,7 @@
 #ifndef FUNCOES04_H
 #define FUNCOES04_H
 
-typedef unsigned long int tipo_capicua;
+typedef unsigned long long int tipo_capicua; // %lu --- max: 4.294.967.295
 
 tipo_capicua maior_capicua(int de,int ate,unsigned int *maior1,unsigned int *maior2);
 

@@ -24,7 +24,7 @@ int main(int argc , char* argv[])
     // Variavel para armazenar multiplciacao
     tipo_capicua capicua;
     
-    capicua = maior_capicua(100,999,&maior1,&maior2);
+    capicua = maior_capicua(10 000 000,99 999 999,&maior1,&maior2);
     
     printf("Maior capicua %u x %u = %lu\n",maior1,maior2,capicua);
 }
