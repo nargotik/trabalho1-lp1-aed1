@@ -9,12 +9,13 @@
 #ifndef FUNCOES04_H
 #define FUNCOES04_H
 
+typedef unsigned long int tipo_capicua;
 
-long double maior_capicua(int de,int ate,unsigned int *maior1,unsigned int *maior2);
+tipo_capicua maior_capicua(int de,int ate,unsigned int *maior1,unsigned int *maior2);
 
-int inverte(int valor);
+tipo_capicua inverte(tipo_capicua valor);
 
-int is_capicua(int numero);
+tipo_capicua is_capicua(tipo_capicua numero);
 
 #endif /* QUESTAO04_H */
 

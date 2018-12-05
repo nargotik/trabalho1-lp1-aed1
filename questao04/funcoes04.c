@@ -16,7 +16,7 @@
  * @param maior2 apontador para armazenar o segundo valor maior
  * @return maior capicua da multiplicacao de 2 numeros
  */
-long double maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *maior2) {
+tipo_capicua maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *maior2) {
     // Variavel para armazenar multiplciacao
     unsigned long int multiplicacao,maior_capicua=0;
     
@@ -79,9 +79,9 @@ long double maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *mai
  * @param valor
  * @return valor inverso
  */
-int inverte(int valor)
+tipo_capicua inverte(tipo_capicua valor)
 {  
-   int inversa=0;
+   tipo_capicua inversa=0;
    do 
    {
       inversa   = inversa * 10 + (valor%10);
@@ -95,6 +95,6 @@ int inverte(int valor)
  * @param numero
  * @return valor booleano da opecação
  */
-int is_capicua(int numero) {
+tipo_capicua is_capicua(tipo_capicua numero) {
     return (inverte(numero) == numero);
 }
