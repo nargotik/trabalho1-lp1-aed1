@@ -22,11 +22,11 @@ int main(int argc , char* argv[])
     unsigned int maior1,maior2;
 
     // Variavel para armazenar multiplciacao
-    unsigned int capicua;
+    long double capicua;
     
     capicua = maior_capicua(100,999,&maior1,&maior2);
     
-    printf("Maior capicua %u x %u = %u\n",maior1,maior2,capicua);
+    printf("Maior capicua %u x %u = %lF\n",maior1,maior2,capicua);
 }
 
 

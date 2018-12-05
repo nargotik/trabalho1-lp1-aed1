@@ -16,7 +16,7 @@
  * @param maior2 apontador para armazenar o segundo valor maior
  * @return maior capicua da multiplicacao de 2 numeros
  */
-unsigned long int maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *maior2) {
+long double maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *maior2) {
     // Variavel para armazenar multiplciacao
     unsigned long int multiplicacao,maior_capicua=0;
     
