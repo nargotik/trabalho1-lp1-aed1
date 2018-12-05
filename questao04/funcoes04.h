@@ -9,11 +9,9 @@
 #ifndef FUNCOES04_H
 #define FUNCOES04_H
 
-typedef unsigned long long int tipo_capicua; // %lu --- max: 4.294.967.295
+typedef unsigned long long int tipo_capicua; // 
 
 tipo_capicua maior_capicua(int de,int ate,unsigned int *maior1,unsigned int *maior2);
-
-tipo_capicua maior_capicua2(int de,int ate,unsigned int *maior1,unsigned int *maior2);
 
 tipo_capicua inverte(tipo_capicua valor);
 

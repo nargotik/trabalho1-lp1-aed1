@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include "funcoes04.h"
 
+#define INICIO 100
+#define FIM 999
 
 /*!
  * @function    main
@@ -24,7 +26,7 @@ int main(int argc , char* argv[])
     // Variavel para armazenar multiplciacao
     tipo_capicua capicua;
     
-    capicua = maior_capicua2(100000,999999,&maior1,&maior2);
+    capicua = maior_capicua(INICIO,FIM,&maior1,&maior2);
     
     printf("Maior capicua %u x %u = %llu\n",maior1,maior2,capicua);
 }
