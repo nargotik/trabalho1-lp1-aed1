@@ -16,11 +16,11 @@
  * @param maior2 apontador para armazenar o segundo valor maior
  * @return maior capicua da multiplicacao de 2 numeros
  */
-unsigned int maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *maior2) {
+unsigned long int maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *maior2) {
     // Variavel para armazenar multiplciacao
-    unsigned int multiplicacao,maior_capicua=0;
+    unsigned long int multiplicacao,maior_capicua=0;
     
-    int ciclos=0; // For benchmarking
+    //int ciclos=0; // For benchmarking
     
     // Verifica se o até*até é a maior capicua
     multiplicacao = ate*ate;
@@ -30,17 +30,17 @@ unsigned int maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *ma
         maior_capicua = multiplicacao;
     }
     
-    for (int primeiro = ate; primeiro > de; primeiro--) {
+    for (int primeiro = ate; primeiro >= de; primeiro--) {
         
-        // Se a multiplicacao for menos que a maior capicua sai fora
+        // Se a multiplicacao for menos que a maior capicua faz break e nao faz proximo for
         multiplicacao = primeiro * (primeiro-1);
         if ( multiplicacao < maior_capicua) break;
         
-        
-        for (int segundo = (primeiro-1); segundo > de; segundo--) {
-            ciclos++; // For benchmarking
+        // Apenas vai testar a multiplicacao do primeiro * primeiro-1....de
+        for (int segundo = (primeiro-1); segundo >= de; segundo--) {
+            //ciclos++; // For benchmarking
             
-            // Se a multiplicacao for menos que a maior capicua sai fora
+            // Se a multiplicacao for menos que a maior capicua sai fora do for
             multiplicacao = primeiro * segundo;
             if ( multiplicacao < maior_capicua) break;
             
@@ -54,7 +54,21 @@ unsigned int maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *ma
             
         }
     }
-    printf("ciclos: %d",ciclos);
+    //printf("ciclos: %d",ciclos);
+    /* BenchMarks
+     * 
+     * Maior capicua de 100 a 999
+     * Ciclos: 6116 vs 810000(900^2)
+     * Maior capicua 993 x 913 = 906609
+     * 
+     * Maior capicua de 100000 a 999999
+     * ciclos: 856412 vs 810000000000(900000^2)
+     * Maior capicua 999999 x 757913 = 1997997991
+     * 
+     * Maior capicua de 10000000 a 99999999
+     * ciclos: 32999 vs 8100000000000000(90000000^2)
+     * Maior capicua 99999999 x 99967043 = 314868413
+     */
     return maior_capicua;
 }
 

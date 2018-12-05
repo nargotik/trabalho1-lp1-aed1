@@ -107,6 +107,11 @@ $$
 multiplicacao = primeiro . segundo
 $$Se o valor for igual à sua inversa logo é capicua.
 
+Foi tambem muito interessante optimizar e ver a forma melhor de reduzir calculos desnecessários tais como:
+- 999*998 e em seguida fazer 998*999
+- 500*400 e todos os seguintes quando a maior capicua já é um valor superior a esta multiplicação.
+Isto mostra uma forma muito interessante de usar a função break em ciclos.
+
  ```mermaid
 graph TB
 ATTR1[ Inversa = 0 ]-->
