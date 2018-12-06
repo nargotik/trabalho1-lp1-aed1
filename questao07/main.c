@@ -24,7 +24,7 @@
  * @function    main
  * @abstract    main da questao07.
  */
-int main(int argc , char* argv[])
+int main()
 {
     // Array de armazenamento dos numeros
     int *numeros_aleatorios;

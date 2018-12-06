@@ -46,7 +46,7 @@
 /*!
  * Função main
  */
-int main(int argc , char* argv[])
+int main()
 {
     // Saldo Médio da conta do cliente
     float saldo_medio=0;

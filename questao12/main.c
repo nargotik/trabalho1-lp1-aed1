@@ -19,7 +19,7 @@
  * @param       argv     ....
  * @result      An integer result of this function.
  */
-int main(int argc, char** argv)
+int main()
 {
 
     return (EXIT_SUCCESS);

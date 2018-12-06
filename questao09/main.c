@@ -13,7 +13,7 @@
 #include "funcoes09.h"
 
 
-int main(int argc , char* argv[])
+int main()
 {
     int n=-1;
     do {

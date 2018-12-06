@@ -15,7 +15,7 @@
 #include <stdio.h>
 
 
-int main(int argc , char* argv[])
+int main()
 {
     int peso = 0, contador=0, contador_condicao=0;
     puts("(Insira Valores) \n"

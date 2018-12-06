@@ -18,7 +18,7 @@
  * @function    main
  * @abstract    main program function.
  */
-int main(int argc , char* argv[])
+int main()
 {
     // Variavel para armazenar a maior capicua
     unsigned int maior1,maior2;

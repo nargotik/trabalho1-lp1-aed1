@@ -28,7 +28,7 @@
  * @function    main
  * @todo
  */
-int main(int argc, char** argv)
+int main()
 {
     char sentinela='S';
     do {

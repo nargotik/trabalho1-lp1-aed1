@@ -43,7 +43,7 @@ int lerDados(int minimo, int maximo, int paragem) {
 /**
  * Main function
  */
-int main(int argc , char* argv[])
+int main()
 {
     int peso = 0, contador=0, contador_condicao=0;
     
