@@ -22,22 +22,16 @@ tipo_capicua maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *ma
     
     int ciclos=0; // For benchmarking
     
-    // Verifica se o até*até é a maior capicua
-    multiplicacao = (tipo_capicua)ate*ate;
-    if ( is_capicua(multiplicacao) ) {
-        *maior1 = ate;
-        *maior2 = ate;
-        maior_capicua = multiplicacao;
-    }
     
     for (int primeiro = ate; primeiro >= de; primeiro--) {
         
-        // Se a multiplicacao for menos que a maior capicua faz break e nao faz proximo for
-        multiplicacao = (tipo_capicua)primeiro * (primeiro-1);
+        // Verifica se o primeiro*primeiro é a maior capicua
+        multiplicacao = (tipo_capicua)primeiro*primeiro;
+        // A maior capicua é maior portanto abortar ciclo e terminar
         if ( multiplicacao < maior_capicua) break;
         
         // Apenas vai testar a multiplicacao do primeiro * primeiro-1....de
-        for (int segundo = (primeiro-1); segundo >= de; segundo--) {
+        for (int segundo = primeiro; segundo >= de; segundo--) {
             ciclos++; // For benchmarking
             
             // Se a multiplicacao for menos que a maior capicua sai fora do for
@@ -45,7 +39,6 @@ tipo_capicua maior_capicua(int de, int ate,unsigned int *maior1,unsigned int *ma
             if ( multiplicacao < maior_capicua) break;
             
             // Verifica se o numero multiplicado é igual ao invertido.
-
             if ( is_capicua(multiplicacao) && multiplicacao > maior_capicua ) {
                 *maior1 = primeiro;
                 *maior2 = segundo;
