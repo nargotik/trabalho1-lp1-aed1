@@ -23,7 +23,7 @@ int main()
     // Variavel para armazenar a maior capicua
     unsigned int maior1,maior2;
 
-    // Variavel para armazenar multiplciacao
+    // Variavel para armazenar multiplciacao 
     tipo_capicua capicua;
     
     capicua = maior_capicua(INICIO,FIM,&maior1,&maior2);
