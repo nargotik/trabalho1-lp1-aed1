@@ -150,7 +150,15 @@ Foi desenvolvida uma solução que lê valores superiores ou iguais a zero usand
 
 ## Questão 06
 
-@todo.
+Foi utilizada uma abordagem comum. Uma vez que não podia, ser utilziadas estruturas foi utilizada uma variavel "runtime" de modo a armazenar os varios resultados necessários entre chamadas de funções.
+
+```c
+    // runtime[0] ==> Numero de estudantes
+    // runtime[1] ==> Masculinos
+    // runtime[2] ==> Femininos
+    // runtime[3] ==> Numero de estudantes M sub23 insatisfeitos
+    int runtime[4] = {0 ,0 ,0 ,0};
+```
 
 ## Questão 07
 

@@ -1,27 +1,27 @@
 /*!
  * @header      main.c
- * @abstract    Questao11.
- * @discussion  This file contains all declarations for
- *              foo manipulation.
+ * @abstract    Resolução Questao11.
+ * @discussion  Reimplemente a questão 7 para que o teste de 
+ * verificação de primo seja feito através de uma função.
  * @author      Daniel Torres <a17442|at|alunos.ipca.pt>
  * @link        Daniel Torres GIT <https://github.com/nargotik>
+ * @ref         Crivo de Eratóstenes
+ *                  https://pt.wikipedia.org/wiki/Crivo_de_Erat%C3%B3stenes
  * @version     1.0 29 de Novembro de 2018
  */
 
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "questao07.h"
+#include "funcoes07.h"
 
-/*!
- * @function    main
- * @abstract    main program function.
- * @param       argc    ....
- * @param       argv     ....
- * @result      An integer result of this function.
- */
-int main()
-{
-
-    return (EXIT_SUCCESS);
-}
+/* Sendo que ja anteriormente na questão 7 foi 
+ * utilizada uma função para verificar se é primo 
+ * Apenas foi alterado o makefile de modo a que compile o main da questao07 com
+ * o executavel questao11.
+ * 
+ * Este .c não é utiliziado na compilação
+ * 
+ * >> gcc -o ../bin/questao11 ../questao07/main.c ../questao07/funcoes07.c -O3 \
+ * >> -g3  -W -Wall -Wextra -Wuninitialized -Wstrict-aliasing
+ * /
 
