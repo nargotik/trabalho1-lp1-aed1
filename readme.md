@@ -150,7 +150,7 @@ Foi desenvolvida uma solução que lê valores superiores ou iguais a zero usand
 
 ## Questão 06
 
-Foi utilizada uma abordagem comum. Uma vez que não podia, ser utilziadas estruturas foi utilizada uma variavel "runtime" de modo a armazenar os varios resultados necessários entre chamadas de funções.
+Foi utilizada uma abordagem comum. Uma vez que não podiam ser utilziadas estruturas foi utilizada uma variavel "runtime" de modo a armazenar os varios resultados necessários entre chamadas de funções.
 
 ```c
     // runtime[0] ==> Numero de estudantes
@@ -273,7 +273,11 @@ unsigned int somatorio_recursivo(int numero) {
 
 ## Questão 10
 
-@todo
+O pedido é a implementação do algoritmo criado na questão 7, mas utilizando uma função para verificar se o numero é primo.
+Essa abordagem já foi tida em conta na questão 7 pelo que apenas foi compilado o executavel questao10 usando toda a estrutura da questao 7
+```
+    gcc -o ../bin/questao10 ../questao07/main.c ../questao07/funcoes07.c -O3 -g3  -W -Wall -Wextra -Wuninitialized -Wstrict-aliasing
+```
 
 ## Questão 11
 
