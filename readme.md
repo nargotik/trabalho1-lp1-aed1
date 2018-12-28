@@ -305,13 +305,17 @@ Mediante o tipo de leituras pedido pelo utilizador atribui-se à variavel escala
 
 O array terá a seguinte forma:
 
-temperaturas[LINHA][ENUM_C] 
-ou
-temperaturas[LINHA][0] ===> LEITURA CELSIUS (ENUM_C  = 0)
+**LEITURA CELSIUS (ENUM_C  = 0)**
+```c
+temperaturas[LINHA][ENUM_C] = temperaturas[LINHA][0]
+```
 
-temperaturas[LINHA][ENUM_K] 
-ou
-temperaturas[LINHA][1] ===> LEITURA KELVIN (ENUM_C  = 1)
+
+**LEITURA KELVIN (ENUM_C  = 1)**
+```c
+temperaturas[LINHA][ENUM_K] = temperaturas[LINHA][1]
+```
+
 
 ## Questão 13
 
