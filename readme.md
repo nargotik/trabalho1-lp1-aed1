@@ -272,7 +272,32 @@ unsigned int somatorio_recursivo(int numero) {
 ```
 ## Questão 10
 
-falta fazer documentação @todo
+Foi reimplementada a questão 5 utilizando uma função que recebe o 
+valor minimo de peso a contabilizar no contador, maximo 
+e valor de paragem
+```c
+/**
+ * Função que lê um valor inserido por scanf e devolve o 
+ * mesmo caso esteja no intervalo definido
+ * @param minimo minimo para o valor
+ * @param maximo maximo para o valor
+ * @param paragem valor de paragem
+ * @return retorna o valor inserido caso estena na condicao
+ */
+int lerDados(int minimo, int maximo, int paragem) {
+    int userinput = 0;
+    
+    if (maximo < minimo) return 0;
+
+    scanf("%d",&userinput);
+    if (userinput == paragem) 
+        return paragem;
+    else if (userinput >= minimo && userinput <= maximo ) 
+        return userinput;
+    else
+        return 0;
+}
+```
 
 ## Questão 11
 
