@@ -270,20 +270,50 @@ unsigned int somatorio_recursivo(int numero) {
     return ( ( par(numero) ? numero : 0 )  + somatorio_recursivo(numero - 1) );
 }
 ```
-
 ## Questão 10
+
+falta fazer documentação @todo
+
+## Questão 11
 
 O pedido é a implementação do algoritmo criado na questão 7, mas utilizando uma função para verificar se o numero é primo.
 Essa abordagem já foi tida em conta na questão 7 pelo que apenas foi compilado o executavel questao10 usando toda a estrutura da questao 7
 ```
-    gcc -o ../bin/questao10 ../questao07/main.c ../questao07/funcoes07.c -O3 -g3  -W -Wall -Wextra -Wuninitialized -Wstrict-aliasing
+gcc -o ../bin/questao10 ../questao07/main.c ../questao07/funcoes07.c -O3 -g3  -W -Wall -Wextra -Wuninitialized -Wstrict-aliasing
 ```
 
-## Questão 11
-
-@todo
-
 ## Questão 12
+
+Foi feita uma abordagem ao problema o mais abstrata possivel de forma a que futuras alterações no algoritmo possa a surgir sem ter de se refazer todo o codigo.
+De forma a simplificar a leitura de codigo foi utilizada um enum para identificar qual o apontador no array que pertence a cada tipo de temperatura
+
+```c
+enum tipo_temperatura {
+    ENUM_C  = 0,
+    ENUM_K  = 1,
+};
+```
+
+Numa primeira fase do programa é lido um caracter K ou C conforme o que o utilizador pretenda inserir
+```c
+    // Escala a ler
+    char escala = lerChar("Insira a escala [K]elvin ou [C]elsius: "," %1[kKcC]");
+    int escala_orig = (escala == 'K' ? ENUM_K : ENUM_C);
+    int escala_dest = (escala == 'K' ? ENUM_C : ENUM_K);
+```
+Mediante o tipo de leituras pedido pelo utilizador atribui-se à variavel escala_orig o valor da escala que será inserida.
+
+O array terá a seguinte forma:
+
+temperaturas[LINHA][ENUM_C] 
+ou
+temperaturas[LINHA][0] ===> LEITURA CELSIUS (ENUM_C  = 0)
+
+temperaturas[LINHA][ENUM_K] 
+ou
+temperaturas[LINHA][1] ===> LEITURA KELVIN (ENUM_C  = 1)
+
+## Questão 13
 
 @todo
 
