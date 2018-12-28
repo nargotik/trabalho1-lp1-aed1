@@ -39,8 +39,6 @@
 /*!
  * @function    main
  * @abstract    main program function.
- * @param       argc    ....
- * @param       argv     ....
  * @result      An integer result of this function.
  */
 int main()
