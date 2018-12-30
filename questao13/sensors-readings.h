@@ -1,20 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   sensors-readings.h
- * Author: Utilizador
- *
- * Created on 28 de Dezembro de 2018, 8:24
+ * Author: Daniel Torres <a17442|at|alunos.ipca.pt>
+ * 
+ * Created on 29 de Novembro de 2018
  */
 
 #ifndef SENSORS_READINGS_H
 #define SENSORS_READINGS_H
 
+#include "sensors.h"
 
+#define MAX_LEITURAS 9000
+
+#define LEITURAS_FILENAME "leituras.dat"
+
+typedef struct Leitura {
+    codigo_t    cod_sensor; 
+    struct datahora_t  DataHora; // time_t
+    datahora_t2 tm; // future use
+    leitura_t   valor;
+} Leitura;
+
+// Function declaration 
+int leituraTimestampUpdate(int idx_sensor,Sensor Sensores[], ProgramData parametros);
+int escreverLeitura(codigo_t cod_sensor,leitura_t leitura, Sensor Sensores[], ProgramData parametros);
+int writeLeitura(Leitura reading);
+int readLeituras(Leitura leituras[]);
+int readLeiturasZona(Leitura readings[],zona_t zona, Sensor sensores[], int total_sensores);
+int readLeiturasSensor(Leitura readings[],zona_t zona);
+int readLeiturasZonaDia(Leitura readings[],zona_t zona, Sensor sensores[], int total_sensores, datahora_t dia);
+int minLeitura(Leitura readings[], int total);
+int maxLeitura(Leitura readings[], int total);
+float mediaLeitura(Leitura readings[], int total);
+void ordenaLeituras(Leitura readings[], int sz);
+void mostraLeituras(Leitura readings[], int total);
 
 #endif /* SENSORS_READINGS_H */
 

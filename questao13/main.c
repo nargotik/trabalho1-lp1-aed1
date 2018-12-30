@@ -1,27 +1,37 @@
 /*!
  * @header      main.c
  * @abstract    Questao13.
- * @discussion  This file contains all declarations for
- *              foo manipulation.
+ * @discussion  Programa principal.
  * @author      Daniel Torres <a17442|at|alunos.ipca.pt>
  * @link        Daniel Torres GIT <https://github.com/nargotik>
- * @ref         some reference
- * @version     1.0 29 de Novembro de 2018
+ * @version     1.0 29 de Dezembro de 2018
  */
 
 
 #include <stdio.h>
 #include <stdlib.h>
 
+
+#include "main.h"
+#include "sensors-readings.h"
+#include "sensors.h"
+#include "funcoes13.h"
+#include "menu.h"
+
 /*!
  * @function    main
- * @abstract    main program function.
- * @param       argc    ....
- * @param       argv     ....
- * @result      An integer result of this function.
  */
-int main(int argc, char** argv)
+int main()
 {
+    ProgramData parametros;
+    parametros.total_leituras = 0;
+    parametros.total_sensores = 0;
+    
+    Sensor Sensores[MAX_SENSORES];
+    Leitura Leituras[MAX_LEITURAS];
+
+
+    DashBoard(Sensores, &parametros, Leituras);
 
     return (EXIT_SUCCESS);
 }

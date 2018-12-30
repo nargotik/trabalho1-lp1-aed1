@@ -344,8 +344,18 @@ temperaturas[LINHA][ENUM_K] = temperaturas[LINHA][1]
 
 ## Questão 13
 
-@todo
+Fiz uma abordagem ao problema separando a layer de leitura de sensores da layer de dashboard.
+- O ficheiro main.c dará origem ao programa que faz toda a layer de dashboard
+- O ficheiro main-sensor.c dará origem ao programa que fará entreda de leituras, foi pensado fazer a abordagem de leituras via TCP/IP no entanto e dada a falta de tempo foi implementada pela linha de comandos pelo argumentos do programa.
+Logo para inserir uma leitura apenas será necessário:
+```
+./questao13-sensor 6 53
+```
+onde o valor **6** é o codigo do sensor e o valor 53 é a leitura
 
+Este tipo de programas são mais simples de abordar utilizando sistemas de bases de dados, pois é mais facil manter integridade de dados, no entanto foi utilizado ficheiros binários de forma a permitir um acesso fácil e rápido.
+
+Na pasta bin/ existem 3 ficheiros .dat que podem ser utilizados pois tem dados dummies para testes.
 
 # Bibliografia
 
