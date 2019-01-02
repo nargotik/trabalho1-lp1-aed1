@@ -73,12 +73,11 @@ void mostraOpcao(int opcao,char* msg) {
  * Limpa o ecra
  */
 void clearScreen() {
-    int result;
 #ifdef LINUX
-    result = system("clear");
+    (void)system("clear");
 #endif
 #ifdef WINDOWS
-    result = system("cls");
+    (void)system("cls");
 #endif
 }
 
@@ -148,7 +147,7 @@ ProgramData readParametros() {
       }
           
   } else{
-    fread(&aux, sizeof(ProgramData), 1, af);
+    (void)fread(&aux, sizeof(ProgramData), 1, af);
     
     // Para prevenir falhas vai verificar qual o tamanho de sensores e leituras no ficheiro
     aux.total_leituras = totalLeituras();

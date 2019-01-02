@@ -18,7 +18,7 @@ int main()
     int n=-1;
     do {
         printf("Indique um numero inteiro:");
-        scanf(" %d",&n);
+        (void)scanf(" %d",&n);
         getchar();
     } while (!( n>=0 ));
     

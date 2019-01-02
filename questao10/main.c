@@ -31,7 +31,7 @@ int lerDados(int minimo, int maximo, int paragem) {
     
     if (maximo < minimo) return 0;
 
-    scanf("%d",&userinput);
+    (void)scanf("%d",&userinput);
     if (userinput == paragem) 
         return paragem;
     else if (userinput >= minimo && userinput <= maximo ) 
@@ -52,11 +52,11 @@ int main()
      */
     int min = 50, max = 80, paragem = -1;
     printf("Insira peso do min intervalo:");
-    scanf("%d",&min);
+    (void)scanf("%d",&min);
     printf("Insira peso do max intervalo:");
-    scanf("%d",&max);
+    (void)scanf("%d",&max);
     printf("Indique qual o valor para paragem:");
-    scanf("%d",&paragem);
+    (void)scanf("%d",&paragem);
     
 
     

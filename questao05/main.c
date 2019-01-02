@@ -22,7 +22,7 @@ int main()
             "Termine com o valor -1\n");
     do {
         printf("Insira o peso %d :",++contador);
-        scanf(" %d",&peso);
+        (void)scanf(" %d",&peso);
         if (peso>=50 && peso<=80)
             contador_condicao++;    
     } while (peso >= 0);
