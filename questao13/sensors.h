@@ -40,6 +40,7 @@ int insereSensor(Sensor sensores[],ProgramData *parametros);
 void mostraSensores(Sensor sensores[],int total);
 int removerSensor(Sensor sensores[],ProgramData *parametros);
 int editarSensor(Sensor sensores[],int total);
+int totalSensores();
 
 #endif /* SENSORS_H */
 

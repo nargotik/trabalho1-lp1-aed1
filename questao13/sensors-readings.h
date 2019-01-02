@@ -34,6 +34,7 @@ int maxLeitura(Leitura readings[], int total);
 float mediaLeitura(Leitura readings[], int total);
 void ordenaLeituras(Leitura readings[], int sz);
 void mostraLeituras(Leitura readings[], int total);
+int totalLeituras();
 
 #endif /* SENSORS_READINGS_H */
 

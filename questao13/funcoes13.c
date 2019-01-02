@@ -7,14 +7,16 @@
  * @version     1.0 29 de Dezembro de 2018
  */
 
-#include "main.h"
-#include "funcoes13.h"
+
 
 
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h> // exit()
+
+#include "main.h"
+#include "funcoes13.h"
 
 /**
  * Le um inteiro
@@ -71,11 +73,12 @@ void mostraOpcao(int opcao,char* msg) {
  * Limpa o ecra
  */
 void clearScreen() {
+    int result;
 #ifdef LINUX
-    system("clear");
+    result = system("clear");
 #endif
 #ifdef WINDOWS
-    system("cls");
+    result = system("cls");
 #endif
 }
 
@@ -93,8 +96,8 @@ void err(char* msg) {
  * @param msg
  */
 void notice(char* msg) {
-    fprintf(stderr, msg);
-
+    fprintf(stdout, msg);
+    fprintf(stdout, "\n");
 }
 
 /**
@@ -219,4 +222,19 @@ datahora_t lerDiaMesAno() {
     return aux;
 }
 
-
+/**
+ * Devolve o tamanho do ficheiro em Bytes
+ * @param fp
+ * @return 
+ */
+int fsize(FILE *fp){
+    // Armazena a posição inicial para colocar após leitura
+    int prev = ftell(fp);
+    // Procura o fim do ficheiro
+    fseek(fp, 0L, SEEK_END);
+    // Armazena a posição do fim do ficheiro
+    int sz = ftell(fp);
+    // Volta a colocar no ponto inicial
+    fseek(fp,prev,SEEK_SET);
+    return sz;
+}

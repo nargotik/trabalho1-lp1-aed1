@@ -11,6 +11,7 @@
 #include "main.h"
 #include "sensors-readings.h"
 #include "sensors.h"
+#include <stdio.h>
 
 // Function declaration 
 int lerInteiro(char* msg, int min, int max);
@@ -27,6 +28,7 @@ ProgramData readParametros();
 int writeParametros(ProgramData aux);
 int refreshData(Sensor sensores[],ProgramData *parametros,Leitura readings[]);
 datahora_t lerDiaMesAno();
+int fsize(FILE *fp);
 
 #endif /* FUNCOES13_H */
 

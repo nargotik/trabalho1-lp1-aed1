@@ -70,7 +70,25 @@ int escreverLeitura(codigo_t cod_sensor,leitura_t leitura, Sensor Sensores[], Pr
     return 1;
 }
 
-
+/**
+ * Verifica o Total de Leituras atraves do tamanho do ficheiro leituras
+ * @return 
+ */
+int totalLeituras() {
+    FILE *af;
+    af = fopen(LEITURAS_FILENAME,"rb+");
+    
+    int total_leituras = fsize(af) / sizeof(Leitura);
+    
+    if (af == NULL) {
+      // Impossivel abrir o ficheiro ficheiro nao existe (Inicializa)
+      total_leituras = -1;
+    } else {
+        fclose(af);
+        
+    } 
+    return total_leituras;
+}
 
 /**
  * Escreve uma leitura no fim do ficheiro de leituras
@@ -83,6 +101,10 @@ int writeLeitura(Leitura reading) {
 
   // Abertura para modo binário
   af = fopen(LEITURAS_FILENAME,"ab+");
+  
+  if (totalLeituras() >= MAX_LEITURAS)
+      err("Limite de leituras atingido");
+  
   if (af == NULL) {
       // Impossivel abrir o ficheiro ficheiro nao existe (Inicializa)
       nescritos = -1;

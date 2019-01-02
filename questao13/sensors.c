@@ -14,6 +14,25 @@
 
 
 /**
+ * Verifica o Total de Sensores atraves do tamanho do ficheiro leituras
+ * @return 
+ */
+int totalSensores() {
+    FILE *af;
+    af = fopen(SENSORS_FILENAME,"rb+");
+    
+    int total_sensores = fsize(af) / sizeof(Sensor);
+    
+    if (af == NULL) {
+      // Impossivel abrir o ficheiro ficheiro nao existe (Inicializa)
+      total_sensores = -1;
+    } else {
+      fclose(af);
+    } 
+    return total_sensores;
+}
+
+/**
  * Editar um sensor
  * @param sensores
  * @param total
