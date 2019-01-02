@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-O3 -g3  -W -Wall -Wextra -Wuninitialized -Wstrict-aliasing -Wno-format-security -Wno-unused-but-set-variable
+CFLAGS=-O3 -g3  -W -Wall -Wextra -Wuninitialized -Wstrict-aliasing -Wno-format-security -Wno-unused-but-set-variable -Wno-unused-result
 # Define as dependencias
 DEPS = $(wildcard *.h)
 # Define os ficheiros c a incluir excluindo o programa sensor
