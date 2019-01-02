@@ -21,7 +21,7 @@ int totalSensores() {
     FILE *af;
     af = fopen(SENSORS_FILENAME,"rb+");
     
-    int 0;
+    int total_sensores = 0;
     
     if (af == NULL) {
       // Impossivel abrir o ficheiro ficheiro nao existe (Inicializa)
