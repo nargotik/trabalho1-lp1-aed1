@@ -4,7 +4,7 @@
  * @discussion  Funções utilziadas para tratamento de sensores.
  * @author      Daniel Torres <a17442|at|alunos.ipca.pt>
  * @link        Daniel Torres GIT <https://github.com/nargotik>
- * @version     1.0 29 de Dezembro de 2018
+ * @version     1.0 29 de Dezembro de 2018 
  */
 
 #include <stdio.h>
