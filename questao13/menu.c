@@ -70,7 +70,7 @@ void Menu_0_2(Sensor sensores[],ProgramData *parametros) {
     zona_t zona = lerInteiro("Zona do Sensor [0-100]:",0,100);
     datahora_t data = lerDiaMesAno();
     // readLeiturasZona
-    Leitura aux_readings[MAX_LEITURAS];
+    Leitura *aux_readings = malloc(MAX_LEITURAS * sizeof(Leitura));
     int total_leituras=0;
     total_leituras = readLeiturasZonaDia(aux_readings, zona, sensores, parametros->total_sensores, data);
     mostraCabecalho("VALORES MIN MAX E MEDIOS DE UMA ZONA");
@@ -100,7 +100,7 @@ void Menu_0_2(Sensor sensores[],ProgramData *parametros) {
 void Menu_0_3(Sensor sensores[],ProgramData *parametros) {
     zona_t zona = lerInteiro("Zona do Sensor [0-100]:",0,100);
     // readLeiturasZona
-    Leitura aux_readings[MAX_LEITURAS];
+    Leitura *aux_readings = malloc(MAX_LEITURAS * sizeof(Leitura));
     //int readLeiturasZona(Leitura readings[],zona_t zona, Sensor sensores[], int total_sensores)
     int total_leituras=0;
     total_leituras = readLeiturasZona(aux_readings,zona,sensores,parametros->total_sensores);
@@ -123,7 +123,7 @@ void Menu_0_4() {
     codigo_t codigo = lerInteiro("Codigo do Sensor [0-1000]:",0,1000);
     //readLeiturasSensor
     // readLeiturasZona
-    Leitura aux_readings[MAX_LEITURAS];
+    Leitura *aux_readings = malloc(MAX_LEITURAS * sizeof(Leitura));
     //int readLeiturasZona(Leitura readings[],zona_t zona, Sensor sensores[], int total_sensores)
     int total_leituras=0;
     total_leituras = readLeiturasSensor(aux_readings,codigo);
