@@ -10,8 +10,13 @@
 
 
 #define DEBUG 1
-#define WINDOWS 1 
-//#define LINUX 1 
+
+// Detect SO
+#ifdef __unix__         
+#define LINUX
+#elif defined(_WIN32) || defined(WIN32) 
+#define WINDOWS
+#endif
 
 #include <time.h>
 
