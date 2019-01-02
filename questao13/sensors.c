@@ -21,12 +21,14 @@ int totalSensores() {
     FILE *af;
     af = fopen(SENSORS_FILENAME,"rb+");
     
-    int total_sensores = fsize(af) / sizeof(Sensor);
+    int 0;
     
     if (af == NULL) {
       // Impossivel abrir o ficheiro ficheiro nao existe (Inicializa)
       total_sensores = -1;
     } else {
+      total_sensores = fsize(af) / sizeof(Sensor);
+      
       fclose(af);
     } 
     return total_sensores;

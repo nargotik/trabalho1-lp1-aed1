@@ -77,13 +77,15 @@ int escreverLeitura(codigo_t cod_sensor,leitura_t leitura, Sensor Sensores[], Pr
 int totalLeituras() {
     FILE *af;
     af = fopen(LEITURAS_FILENAME,"rb+");
+
     
-    int total_leituras = fsize(af) / sizeof(Leitura);
+    int total_leituras = 0;
     
     if (af == NULL) {
       // Impossivel abrir o ficheiro ficheiro nao existe (Inicializa)
       total_leituras = -1;
     } else {
+        total_leituras = fsize(af) / sizeof(Leitura);
         fclose(af);
         
     } 

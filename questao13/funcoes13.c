@@ -192,9 +192,10 @@ int writeParametros(ProgramData aux) {
  */
 int refreshData(Sensor sensores[],ProgramData *parametros,Leitura readings[]) {
     int updated = 0;
+            
     ProgramData aux2 = readParametros();
     
-    
+
     
     // Há leituras novas
     if (aux2.total_leituras != parametros->total_leituras) {
