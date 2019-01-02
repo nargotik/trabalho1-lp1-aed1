@@ -23,20 +23,23 @@ int random_number(int min_num, int max_num);
 /*!
  * @result      An integer result of this function.
  */
-int main(int argc, char** argv)
+int main()
 {
     Sensor sensores[MAX_SENSORES];
     ProgramData parametros;
     
     int aux_leituras;
     codigo_t aux_cod;
-    for (int i=0;i < 15; i++) {
+    int total_sensores = totalSensores();
+    
+    for (int i= total_sensores;i < MAX_SENSORES; i++) {
         aux_cod = i + 100;
         sensores[i] = geraSensorRandom(aux_cod);
         
-        aux_leituras = MAX_LEITURAS / random_number(8,15);
+        // Gera um numero random de leituras
+        aux_leituras = MAX_LEITURAS / random_number(MAX_SENSORES / 2 , MAX_SENSORES);
         
-        parametros.total_leituras = 0;
+        parametros.total_leituras = totalLeituras();
         parametros.total_sensores = i+1;
     
         writeSensores(sensores, parametros.total_sensores);
@@ -52,10 +55,15 @@ int main(int argc, char** argv)
         }
         writeParametros(parametros);
     }
-
+    printf("DONE");
     return (EXIT_SUCCESS);
 }
 
+/**
+ * Gera um sensor random
+ * @param cod
+ * @return 
+ */
 Sensor geraSensorRandom(codigo_t cod) {
     Sensor aux;
     aux.cod = cod;
@@ -71,7 +79,12 @@ Sensor geraSensorRandom(codigo_t cod) {
     return aux;
 }
 
-
+/**
+ * Gera um numero random
+ * @param min_num
+ * @param max_num
+ * @return 
+ */
 int random_number(int min_num, int max_num) {
     int result = 0;
 
