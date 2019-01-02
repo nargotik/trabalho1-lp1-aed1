@@ -28,9 +28,8 @@ int main()
     parametros.total_sensores = 0;
     
     Sensor Sensores[MAX_SENSORES];
-    Leitura Leituras[MAX_LEITURAS];
-
-    // Leitura *Leituras = malloc(MAX_LEITURAS * sizeof(Leitura));
+    
+    Leitura *Leituras = malloc(MAX_LEITURAS * sizeof(Leitura));
 
     DashBoard(Sensores, &parametros, Leituras);
 
