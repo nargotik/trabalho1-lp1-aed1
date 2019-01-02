@@ -113,7 +113,7 @@ int ler_anos() {
     int anos_conta=-999;
     printf("===========================================\n");
     printf("Insira os anos da conta:");
-    (void)scanf(" %d",&anos_conta);
+    scanf(" %d",&anos_conta);
     
     getchar(); // Limpa \n do buffer stdin
     
@@ -136,7 +136,7 @@ float ler_saldo() {
     float saldo_medio=-999999;
     printf("===========================================\n");
     printf("Insira o saldo médio da conta:");
-    (void)scanf(" %f",&saldo_medio);
+    scanf(" %f",&saldo_medio);
     
     getchar(); // Limpa \n do buffer stdin
     
@@ -163,7 +163,7 @@ int ler_codigoconta() {
     printf("===========================================\n");
     mostra_opcoes(numero_contas);
     printf("Insira o código da conta:");
-    (void)scanf(" %d",&codigo_conta);
+    scanf(" %d",&codigo_conta);
     
     getchar(); // Limpa \n do buffer stdin
     
