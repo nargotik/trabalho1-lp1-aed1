@@ -9,7 +9,7 @@
 #define SENSORS_H
 
 // Maximo de sensores possiveis armazenar
-#define MAX_SENSORES 10
+#define MAX_SENSORES 20
 
 // Ficheiro que armazena os sensores
 #define SENSORS_FILENAME "sensores.dat"

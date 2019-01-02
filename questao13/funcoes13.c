@@ -150,6 +150,9 @@ ProgramData readParametros() {
   } else{
     fread(&aux, sizeof(ProgramData), 1, af);
     
+    // Para prevenir falhas vai verificar qual o tamanho de sensores e leituras no ficheiro
+    aux.total_leituras = totalLeituras();
+    aux.total_sensores = totalSensores();
     fclose(af);
   }
   return aux; 
@@ -163,7 +166,11 @@ int writeParametros(ProgramData aux) {
   FILE *af;
 
   int nescritos=0;
-
+  
+  // Para prevenir falhas vai verificar qual o tamanho de sensores e leituras no ficheiro
+  aux.total_leituras = totalLeituras();
+  aux.total_sensores = totalSensores();
+    
   // Abertura para modo binário
   af = fopen(PROGRAMDATA_FILENAME,"wb");
   if (af == NULL) {
@@ -186,6 +193,8 @@ int writeParametros(ProgramData aux) {
 int refreshData(Sensor sensores[],ProgramData *parametros,Leitura readings[]) {
     int updated = 0;
     ProgramData aux2 = readParametros();
+    
+    
     
     // Há leituras novas
     if (aux2.total_leituras != parametros->total_leituras) {

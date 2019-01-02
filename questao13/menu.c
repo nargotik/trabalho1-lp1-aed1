@@ -203,7 +203,7 @@ void DashBoard(Sensor sensores[],ProgramData *parametros,Leitura readings[]) {
     
     refreshData(sensores,parametros,readings);
 
-
+    
     mostraCabecalho("--- DASHBOARD ---");
 
     mostraSensores(sensores,parametros->total_sensores);
