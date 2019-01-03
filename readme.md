@@ -83,7 +83,7 @@ void mostra_opcoes(int n) {
 }
 ```
 
-# Questão 03
+## Questão 03
 
 Foi criada uma função que valida se um numero é par e ao mesmo tempo para validar se um numero é ímpar apesar de a mesma não ser necessária nesta solução.
 Não sendo nativo do C as variáveis booleanas, optei por utilizar a função a retornar um inteiro considerando que o valor retornado é o valor booleano da operação ((numero % 2) == 0).

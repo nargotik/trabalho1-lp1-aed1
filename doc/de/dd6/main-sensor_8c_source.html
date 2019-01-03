@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho Prático LP1/AED1: Código-Fonte de questao13/main-sensor.c</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../IPCA.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Trabalho Prático LP1/AED1
+   &#160;<span id="projectnumber">1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Localizar');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_f0e9d0f924ff574b0a6f50311abcf272.html">questao13</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">main-sensor.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/dd6/main-sensor_8c.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/da5/questao13_2main_8h.html">main.h</a>&quot;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d6a/sensors-readings_8h.html">sensors-readings.h</a>&quot;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/d9f/sensors_8h.html">sensors.h</a>&quot;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/d68/funcoes13_8h.html">funcoes13.h</a>&quot;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../de/dd6/main-sensor_8c.html#a0ddf1224851353fc92bfbff6f499fa97">   22</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../de/dd6/main-sensor_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../d9/de8/struct_program_data.html">ProgramData</a> parametros = <a class="code" href="../../d0/d5d/funcoes13_8c.html#a40f977675cc057872ff34a33e9d4680c">readParametros</a>();</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../d9/d29/struct_sensor.html">Sensor</a> Sensores[<a class="code" href="../../d1/d9f/sensors_8h.html#ad17ba5d4f6e3d653dbf729d1b3694514">MAX_SENSORES</a>];</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../d7/d9f/sensors_8c.html#a1984dd1152fcc9d62fce96a860e7f442">readSensores</a>(Sensores,parametros.<a class="code" href="../../d9/de8/struct_program_data.html#a2d60c95b203084024a97aefb45271f61">total_sensores</a>);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (parametros.<a class="code" href="../../d9/de8/struct_program_data.html#a2d60c95b203084024a97aefb45271f61">total_sensores</a> == 0)</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="../../d0/d5d/funcoes13_8c.html#a6cf664520809dfa2cadf826d78024795">err</a>(<span class="stringliteral">&quot;ERRO: Nao existem sensores configurados\n&quot;</span>);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (argc != 3) {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="../../d7/d9f/sensors_8c.html#a98fa2f48da8db6c7b31403f998de6979">mostraSensores</a>(Sensores,parametros.<a class="code" href="../../d9/de8/struct_program_data.html#a2d60c95b203084024a97aefb45271f61">total_sensores</a>);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="../../d0/d5d/funcoes13_8c.html#a6cf664520809dfa2cadf826d78024795">err</a>(<span class="stringliteral">&quot;ERRO: Parametros Inválidos \n\tUSAGE:programa.exe COD_SENSOR LEITURA\n&quot;</span>);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> valorLido = atoi(argv[2]);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> codSensor = atoi(argv[1]);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> leitura = </div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="../../d3/dc7/sensors-readings_8c.html#ad9d3c658f679377944f42a5cc48ac8d1">escreverLeitura</a>(</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            codSensor, </div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            valorLido, </div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            Sensores, </div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            parametros);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (leitura &lt;= 0) {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="../../d0/d5d/funcoes13_8c.html#a6cf664520809dfa2cadf826d78024795">err</a>(<span class="stringliteral">&quot;ERRO: Impossivel escrever leitura (Sensor nao existe)&quot;</span>);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="../../d7/d9f/sensors_8c.html#a98fa2f48da8db6c7b31403f998de6979">mostraSensores</a>(Sensores,parametros.<a class="code" href="../../d9/de8/struct_program_data.html#a2d60c95b203084024a97aefb45271f61">total_sensores</a>);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="../../d0/d5d/funcoes13_8c.html#a4b270b44f9d9e298897321cdee55c7a7">notice</a>(<span class="stringliteral">&quot;OK: Leitura realizada com sucesso&quot;</span>);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> (EXIT_SUCCESS);</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="ttc" id="sensors_8c_html_a98fa2f48da8db6c7b31403f998de6979"><div class="ttname"><a href="../../d7/d9f/sensors_8c.html#a98fa2f48da8db6c7b31403f998de6979">mostraSensores</a></div><div class="ttdeci">void mostraSensores(Sensor sensores[], int total)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9f/sensors_8c_source.html#l00121">sensors.c:121</a></div></div>
+<div class="ttc" id="funcoes13_8h_html"><div class="ttname"><a href="../../d2/d68/funcoes13_8h.html">funcoes13.h</a></div></div>
+<div class="ttc" id="sensors-readings_8h_html"><div class="ttname"><a href="../../d7/d6a/sensors-readings_8h.html">sensors-readings.h</a></div></div>
+<div class="ttc" id="struct_program_data_html_a2d60c95b203084024a97aefb45271f61"><div class="ttname"><a href="../../d9/de8/struct_program_data.html#a2d60c95b203084024a97aefb45271f61">ProgramData::total_sensores</a></div><div class="ttdeci">int total_sensores</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/questao13_2main_8h_source.html#l00039">main.h:39</a></div></div>
+<div class="ttc" id="questao13_2main_8h_html"><div class="ttname"><a href="../../d3/da5/questao13_2main_8h.html">main.h</a></div></div>
+<div class="ttc" id="struct_sensor_html"><div class="ttname"><a href="../../d9/d29/struct_sensor.html">Sensor</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d9f/sensors_8h_source.html#l00024">sensors.h:24</a></div></div>
+<div class="ttc" id="main-sensor_8c_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../de/dd6/main-sensor_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dd6/main-sensor_8c_source.html#l00022">main-sensor.c:22</a></div></div>
+<div class="ttc" id="sensors_8h_html_ad17ba5d4f6e3d653dbf729d1b3694514"><div class="ttname"><a href="../../d1/d9f/sensors_8h.html#ad17ba5d4f6e3d653dbf729d1b3694514">MAX_SENSORES</a></div><div class="ttdeci">#define MAX_SENSORES</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d9f/sensors_8h_source.html#l00012">sensors.h:12</a></div></div>
+<div class="ttc" id="sensors_8h_html"><div class="ttname"><a href="../../d1/d9f/sensors_8h.html">sensors.h</a></div></div>
+<div class="ttc" id="funcoes13_8c_html_a40f977675cc057872ff34a33e9d4680c"><div class="ttname"><a href="../../d0/d5d/funcoes13_8c.html#a40f977675cc057872ff34a33e9d4680c">readParametros</a></div><div class="ttdeci">ProgramData readParametros()</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d5d/funcoes13_8c_source.html#l00131">funcoes13.c:131</a></div></div>
+<div class="ttc" id="sensors-readings_8c_html_ad9d3c658f679377944f42a5cc48ac8d1"><div class="ttname"><a href="../../d3/dc7/sensors-readings_8c.html#ad9d3c658f679377944f42a5cc48ac8d1">escreverLeitura</a></div><div class="ttdeci">int escreverLeitura(codigo_t cod_sensor, leitura_t leitura, Sensor Sensores[], ProgramData parametros)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc7/sensors-readings_8c_source.html#l00025">sensors-readings.c:25</a></div></div>
+<div class="ttc" id="sensors_8c_html_a1984dd1152fcc9d62fce96a860e7f442"><div class="ttname"><a href="../../d7/d9f/sensors_8c.html#a1984dd1152fcc9d62fce96a860e7f442">readSensores</a></div><div class="ttdeci">int readSensores(Sensor sensores[], int total)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9f/sensors_8c_source.html#l00232">sensors.c:232</a></div></div>
+<div class="ttc" id="funcoes13_8c_html_a6cf664520809dfa2cadf826d78024795"><div class="ttname"><a href="../../d0/d5d/funcoes13_8c.html#a6cf664520809dfa2cadf826d78024795">err</a></div><div class="ttdeci">void err(char *msg)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d5d/funcoes13_8c_source.html#l00088">funcoes13.c:88</a></div></div>
+<div class="ttc" id="funcoes13_8c_html_a4b270b44f9d9e298897321cdee55c7a7"><div class="ttname"><a href="../../d0/d5d/funcoes13_8c.html#a4b270b44f9d9e298897321cdee55c7a7">notice</a></div><div class="ttdeci">void notice(char *msg)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d5d/funcoes13_8c_source.html#l00097">funcoes13.c:97</a></div></div>
+<div class="ttc" id="struct_program_data_html"><div class="ttname"><a href="../../d9/de8/struct_program_data.html">ProgramData</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/questao13_2main_8h_source.html#l00038">main.h:38</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

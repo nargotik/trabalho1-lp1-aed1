@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho Prático LP1/AED1: Trabalho Prático de LP1/AED1</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../IPCA.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Trabalho Prático LP1/AED1
+   &#160;<span id="projectnumber">1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Localizar');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Trabalho Prático de LP1/AED1 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><b>Autor:</b> Daniel Filipe <a href="#" onclick="location.href='mai'+'lto:'+'a17'+'44'+'2@a'+'lu'+'nos'+'.i'+'pca'+'.p'+'t'; return false;">a1744<span style="display: none;">.nosp@m.</span>2@al<span style="display: none;">.nosp@m.</span>unos.<span style="display: none;">.nosp@m.</span>ipca<span style="display: none;">.nosp@m.</span>.pt</a>.</p>
+<p>Este trabalho foi realizado tentando aprimorar os meus conhecimentos a nível de estrutura e organização de código em c.</p>
+<h2>Ficheiros</h2>
+<ul>
+<li><b>Código Principal</b><ul>
+<li>/questao**XX**/main.c **(Questão XX)**</li>
+<li>/questao**XX**/questao**XX**.h **(Header File da Questão XX)**</li>
+</ul>
+</li>
+<li><b>Código Auxiliar</b><ul>
+<li>/questao**XX**/funcoes**XX**.c (Funções utilizadas na função XX)</li>
+</ul>
+</li>
+</ul>
+<h2>Questão 01</h2>
+<p>Trata-se de uma aplicação básica que não devendo utilizar ciclos se torna numa aplicação não muito interessante a nível de se ter que repetir o mesmo código várias vezes, e sempre que for necessário alterar algum parâmetro no mesmo temos de alterar em simultâneo em cinco sítios. Foi utilizada recursividade na função que lê a idade para fazer uma validação muito básica de forma a não utilizar ciclos. Com esta aplicação temos a clara noção da vantagem dos ciclos em programação, pelo que nos leva a equacionar em não utilizar este tipo de abordagem em futuras implementações do género.</p>
+<h2>Questão 02</h2>
+<p>Esta questão trata-se de uma abordagem um pouco mais complexa à utilização de instruções condicionais, dada a complexidade do enunciado. São pedidos 3 dados ao utilizador e mediante as condições que nos são indicadas no enunciado são calculados prémios a atribuir a uma dada conta bancária. Podemos com esta questão tirar a conclusão de que devemos esquematizar as condições lógicas de forma a que se tornem de simples compreensão, comentando claramente as condições lógicas utilizadas de forma a que seja facilmente modificável.</p>
+<div class="fragment"><div class="line">graph LR</div><div class="line">SALDO[Saldo médio] --&gt; D{ &gt; 100,000 EUR }</div><div class="line">D -- Sim--&gt; BONUS1</div><div class="line">ANOS[Anos Conta] --&gt; T{ &gt; 10 Anos }</div><div class="line">T -- Sim --&gt; BONUS1</div><div class="line">BONUS1[Premio1 = 1%]</div><div class="line">TIPO[Tipo Conta] --&gt; TIPOC{ TIPO } </div><div class="line">TIPOC --&gt; T1( 1 - Empresarial Gold ) </div><div class="line">T1 --&gt; B150[ Premio2 = 150 EUR ]</div><div class="line">B150 --&gt; RES</div><div class="line">TIPOC --&gt; T2( 2 - Empresarial Silver ) </div><div class="line">T2 --&gt; B100[ Premio2 = 100 EUR ]</div><div class="line">B100 --&gt; RES</div><div class="line">TIPOC --&gt; T3( 3 - Particular Gold ) </div><div class="line">T3 --&gt; B75[ Premio2 = 75 EUR  ]</div><div class="line">B75 --&gt; RES</div><div class="line">TIPOC --&gt; T4( 4 - Particular Silver ) </div><div class="line">T4 --&gt; B40[ Premio2 = 40 EUR ]</div><div class="line">B40 --&gt; RES</div><div class="line">TIPOC --&gt; T5( Outros ) </div><div class="line">T5 --&gt; B0[ Premio2 = 0 EUR ]</div><div class="line">B0 --&gt; RES</div><div class="line">BONUS1 --&gt; RES( Premio1 + Premio2 )</div></div><!-- fragment --><p>De forma a simplificar futuras alterações na solução optei por utilizar um array global onde está definido o prémio para cada tipo de conta e a descrição, pois desta forma pode ser adicionada a qualquer momento uma nova conta sem necessidade de alteração de qualquer código. </p><div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../db/d77/questao02_8h.html#ab9f64c8098ce9ba1c632b9c5eea20f52">descricao_conta</a>[5] = { </div><div class="line">    <span class="stringliteral">&quot;Empresarial Gold&quot;</span>,   <span class="comment">// Descricao para conta tipo 1</span></div><div class="line">    <span class="stringliteral">&quot;Empresarial Silver&quot;</span>, <span class="comment">// Descricao para conta tipo 2</span></div><div class="line">    <span class="stringliteral">&quot;Particular Gold&quot;</span>,    <span class="comment">// Descricao para conta tipo 3</span></div><div class="line">    <span class="stringliteral">&quot;Particular Silver&quot;</span>,  <span class="comment">// Descricao para conta tipo 4</span></div><div class="line">    <span class="stringliteral">&quot;Outros&quot;</span>              <span class="comment">// Descricao para conta tipo 5</span></div><div class="line">};</div><div class="line"><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../db/d77/questao02_8h.html#a15cc9dba8e1a9d6ed8a6f080dcfdb682">premio_conta</a>[5] = { </div><div class="line">    150,  <span class="comment">// Bonus para conta tipo 1</span></div><div class="line">    100,  <span class="comment">// Bonus para conta tipo 2</span></div><div class="line">    75,   <span class="comment">// Bonus para conta tipo 3</span></div><div class="line">    40,   <span class="comment">// Bonus para conta tipo 4</span></div><div class="line">    0     <span class="comment">// Bonus para conta tipo 5</span></div><div class="line">};</div><div class="line"><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../db/d77/questao02_8h.html#a31e21412bdfb7d81df30a2a05b5e3031">numero_contas</a> = <span class="keyword">sizeof</span>(<a class="code" href="../../db/d77/questao02_8h.html#ab9f64c8098ce9ba1c632b9c5eea20f52">descricao_conta</a>) / <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>*);</div><div class="line">....</div><div class="line"><span class="keywordtype">void</span> <a class="code" href="../../d1/dc7/questao02_2main_8c.html#aea40431519632353328e12566ea6ba77">mostra_opcoes</a>(<span class="keywordtype">int</span> n) {</div><div class="line">    printf(<span class="stringliteral">&quot;%d \t-\t %s\n&quot;</span>,n,<a class="code" href="../../db/d77/questao02_8h.html#ab9f64c8098ce9ba1c632b9c5eea20f52">descricao_conta</a>[n-1]);</div><div class="line"></div><div class="line">    <span class="keywordflow">if</span> ((n-1) != 0) <a class="code" href="../../d1/dc7/questao02_2main_8c.html#aea40431519632353328e12566ea6ba77">mostra_opcoes</a>(n-1);</div><div class="line">}</div></div><!-- fragment --><h2>Questão 03</h2>
+<p>Foi criada uma função que valida se um numero é par e ao mesmo tempo para validar se um numero é ímpar apesar de a mesma não ser necessária nesta solução. Não sendo nativo do C as variáveis booleanas, optei por utilizar a função a retornar um inteiro considerando que o valor retornado é o valor booleano da operação ((numero % 2) == 0). Para fazer o somatório dos números pares de 0..[n] optei por utilizar um ciclo for pois torna-se um ciclo mais simples de implementar quando conhecemos o inicio e fim do ciclo.</p>
+<div class="fragment"><div class="line">graph LR</div><div class="line">LER[ Lê Valor ] --&gt; CICLO(( Para i=0 Até i&lt;= Valor ))</div><div class="line">CICLO --&gt; PA{ &#39;i&#39; É PAR ? } </div><div class="line">PA -- Não --&gt; CICLO</div><div class="line">PA -- Sim --&gt; SOMATORIO[ Soma = Soma + i ]</div><div class="line">SOMATORIO --&gt; CICLO</div></div><!-- fragment --><h2>Questão 04</h2>
+<p>Pessoalmente esta questão suscitou um desafio interessante, foi um forma muito util de perceber a importância de operações básicas de matemática e as conseguir aplicar a situações reais. A parte mais interessante nesta solução foi a realização da função inverte que inverte qualquer numero inteiro, para tal passo a explicar de forma suscita a maneira como foi implementado. Após a criação da função inverte apenas é necessário efetuar dois ciclos um dentro do outro de forma a iterar todas as possibilidades de multiplicação entre $$ multiplicacao = primeiro . segundo $$Se o valor for igual à sua inversa logo é capicua.</p>
+<p>Foi tambem muito interessante optimizar e ver a forma melhor de reduzir calculos desnecessários tais como:</p><ul>
+<li>999*998 e em seguida fazer 998*999</li>
+<li>500*400 e todos os seguintes quando a maior capicua já é um valor superior a esta multiplicação. Isto mostra uma forma muito interessante de usar a função break em ciclos.</li>
+</ul>
+<div class="fragment"><div class="line">graph TB</div><div class="line">ATTR1[ Inversa = 0 ]--&gt;</div><div class="line">DO( Fazer )</div><div class="line">DO--&gt; OP1[ inversa = inversa * 10 ]</div><div class="line">OP1--&gt; OP2[ inversa = inversa + valor % 10 ] </div><div class="line">OP2--&gt; OP3[ valor = valor / 10 ]</div><div class="line">OP3 --&gt; WHILE</div><div class="line">WHILE( Enquanto valor &gt; 0 ) --&gt; DO</div><div class="line">WHILE --&gt; </div><div class="line">RET[ Retorna Inversa ] </div></div><!-- fragment --><div class="fragment"><div class="line"></div><div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d0d/funcoes04_8c.html#af18ebc1289757edc45cdc6f1ec2cf7ea">inverte</a>(<span class="keywordtype">int</span> valor)</div><div class="line">{  </div><div class="line">   <span class="keywordtype">int</span> inversa=0;</div><div class="line">   <span class="keywordflow">do</span> </div><div class="line">   {</div><div class="line">      inversa   = inversa * 10 + (valor%10);</div><div class="line">      valor     = valor / 10;</div><div class="line">   } <span class="keywordflow">while</span>( valor&gt;0 );</div><div class="line">   <span class="keywordflow">return</span> (inversa);</div><div class="line">}</div></div><!-- fragment --><p> A função inverte está descrita acima: </p><h2>Questão 05</h2>
+<p>Foi desenvolvida uma solução que lê valores superiores ou iguais a zero usando um ciclo (do&mdash;while), de forma a que guarda numa variável <b>[contador_condicao]</b> uma incrementação dos valores dentro da condição esperada.</p>
+<h2>Questão 06</h2>
+<p>Foi utilizada uma abordagem comum. Uma vez que não podiam ser utilziadas estruturas foi utilizada uma variavel "runtime" de modo a armazenar os varios resultados necessários entre chamadas de funções.</p>
+<div class="fragment"><div class="line"><span class="comment">// runtime[0] ==&gt; Numero de estudantes</span></div><div class="line"><span class="comment">// runtime[1] ==&gt; Masculinos</span></div><div class="line"><span class="comment">// runtime[2] ==&gt; Femininos</span></div><div class="line"><span class="comment">// runtime[3] ==&gt; Numero de estudantes M sub23 insatisfeitos</span></div><div class="line"><span class="keywordtype">int</span> runtime[4] = {0 ,0 ,0 ,0};</div></div><!-- fragment --><h2>Questão 07</h2>
+<h3>Função is_primo:</h3>
+<p>Foi implementada a função is_primo tentando usar uma forma mista do <em><b>Crivo de Eratóstenes</b></em> com a forma mais vulgar de mediante um ciclo até à raiz quadrada do numero a testar. Utilizando o <em><b>Crivo de Eratóstenes</b></em> logo numa primeira instancia aceitamos os primos que conhecemos </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (n==2) </div><div class="line">       <span class="keywordflow">return</span> <span class="keyword">true</span>;</div></div><!-- fragment --><p> E descartamos todos os múltiplos dele próprio </p><div class="fragment"><div class="line"><span class="comment">// Todos os pares não sao primos    if (n%2 == 0)</span></div><div class="line">   <span class="keywordflow">return</span> <span class="keyword">false</span>;    </div></div><!-- fragment --><p> É efetuada a mesma operação para todos os seguintes até ao numero 19: </p><div class="fragment"><div class="line"><span class="comment">// Proximos numeros primos</span></div><div class="line"><span class="keywordflow">if</span> (n==3 || n==5 || n==7 || n==11 || n==13 || n== 17 || n==19)</div><div class="line">       <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><span class="comment">// Verifica o resto da divisao por um deles possivel</span></div><div class="line"><span class="keywordflow">if</span> (n%3==0 || n%5==0 || n%7==0 || n%11==0 || n%13==0 || n%17==0 || n%19==0 )</div><div class="line">       <span class="keywordflow">return</span> <span class="keyword">false</span>;</div></div><!-- fragment --><p> Após esta implementação apenas será necessário testar um numero reduzido de hipóteses. </p><div class="fragment"><div class="line"><span class="comment">// Caso nao seja um caso destes itera</span></div><div class="line"><span class="comment">// Para i=19 ate i&lt;=sqrt(n)</span></div><div class="line"><span class="keywordtype">int</span> tocheck = sqrt(n);<span class="comment">//n / 2; // se n&gt;n/2 entao n % n &gt; 0</span></div><div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 19; i &lt; tocheck; i = i + 2) { <span class="comment">// Os pares ja foram todos verificados</span></div><div class="line">    <span class="comment">// Verifica se é divisivel por i</span></div><div class="line">    <span class="keywordflow">if</span> (n % i ==0)</div><div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line">}</div></div><!-- fragment --><p> Conclusão: Sobre a função is_prime conseguiu-se obter os números primos até 1,000,000 em cerca de <em><b>1 Segundo</b></em> poupando assim iterações desnecessárias </p><h3>Função gera_sequencia:</h3>
+<p>Esta função tem por objectivo gerar um array de tamanho variável definido num parâmetro cujos números estão cumpridos entre o parâmetro min e max. </p><div class="fragment"><div class="line"></div><div class="line"><span class="keywordtype">int</span> * <a class="code" href="../../d3/d87/funcoes07_8c.html#a1b38401b43dbfe092e9bb87326676043">gera_sequencia</a>(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max, <span class="keywordtype">int</span> numeros) {</div><div class="line">    <span class="keywordtype">int</span> *numero_aleatorio;</div><div class="line"></div><div class="line">    numero_aleatorio = (<span class="keywordtype">int</span>*) calloc(numeros, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div><div class="line"></div><div class="line">    srand((<span class="keywordtype">unsigned</span>) time(NULL));</div><div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i &lt; numeros ;i++) </div><div class="line">        numero_aleatorio[i] = rand() % max + min;</div><div class="line">    <span class="keywordflow">return</span> numero_aleatorio;</div><div class="line">}</div></div><!-- fragment --><p> É utilizado a função rand() que necessita de um seed para ser pseudo-random que é chamado pela função srand().</p>
+<p>A função faz uso de de apontadores de endereço de memoria de forma a que seja passada no return o apontador do endereço.</p>
+<p>Para evocar a função pode ser da seguinte forma: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> *numeros_aleatorios;</div><div class="line"><span class="comment">// Chama função que gera a quantidade necessaria.</span></div><div class="line">numeros_aleatorios = <a class="code" href="../../d3/d87/funcoes07_8c.html#a1b38401b43dbfe092e9bb87326676043">gera_sequencia</a>(<a class="code" href="../../df/def/questao07_8h.html#a0391a678b01c725e9b6964ac5463637b">NUMERO_MIN</a>, <a class="code" href="../../df/def/questao07_8h.html#aef5b3a050fab1d6751577eb5aecef4f4">NUMERO_MAX</a>, <a class="code" href="../../df/def/questao07_8h.html#a986b574de067aa6c58e64428b83651aa">NUMEROS</a>);</div></div><!-- fragment --><h3>Estrutura do Main:</h3>
+<p>Utilizando as duas funções acima descritas o main encarrega-se então agora de iterar o array definido de forma a determinar quais os números primos gerados no array, fazer o somatório dos mesmos e a contagem. </p><h2>Questão 08</h2>
+<p>O pedido neste enunciado é a melhoria da questão 3 de forma a utilizar uma função: </p><div class="fragment"><div class="line"></div><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../dc/ddb/funcoes08_8c.html#ae9418d85e94fd074993e9ceab7a1580c">somatorio</a>(<span class="keywordtype">int</span> numero) {</div><div class="line">    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sum=0;</div><div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=1 ;i&lt;=numero ;i++) {</div><div class="line">        <span class="keywordflow">if</span> (par(i))</div><div class="line">            sum += i;</div><div class="line">    }</div><div class="line">    <span class="keywordflow">return</span> sum;</div><div class="line">}</div></div><!-- fragment --><p> Verificamos que a leitura do código presente no main torna-se bastante mais legível e simples, pelo que devemos sempre que utilizar funções para tarefas que se tratam de funções especificas. </p><div class="fragment"><div class="line">printf(<span class="stringliteral">&quot;Soma dos pares: %u - &quot;</span>,<a class="code" href="../../dc/ddb/funcoes08_8c.html#ae9418d85e94fd074993e9ceab7a1580c">somatorio</a>(n));</div></div><!-- fragment --><p> Foi utilizado um <b>unsigned int</b> pois é um inteiro sem sinal logo pela especificidade da função pedida apenas iriam ser somados os números positivos ganhando assim.</p>
+<h2>Questão 09</h2>
+<p>O pedido desta questão é a implementação do somatório da questão anterior desta vez, recursivamente. </p><div class="fragment"><div class="line"></div><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../d5/d81/funcoes09_8c.html#a91a08872c04fbc10fa00ca2f75b81edc">somatorio_recursivo</a>(<span class="keywordtype">int</span> numero) {</div><div class="line">    <span class="comment">// Se chegar a zero ou numero for negativo retorna 0 e sai da recursividade</span></div><div class="line">    <span class="keywordflow">if</span> (numero &lt;= 0) <span class="keywordflow">return</span>(0);</div><div class="line"></div><div class="line">    <span class="comment">// Se for par soma o numero à proxima recursividade senao soma 0</span></div><div class="line">    <span class="keywordflow">return</span> ( ( par(numero) ? numero : 0 )  + <a class="code" href="../../d5/d81/funcoes09_8c.html#a91a08872c04fbc10fa00ca2f75b81edc">somatorio_recursivo</a>(numero - 1) );</div><div class="line">}</div></div><!-- fragment --> <h2>Questão 10</h2>
+<p>Foi reimplementada a questão 5 utilizando uma função que recebe o valor minimo de peso a contabilizar no contador, maximo e valor de paragem </p><div class="fragment"><div class="line"></div><div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d8/d9d/questao10_2main_8c.html#aa0117d28e7a2279427a84f7fcae41924">lerDados</a>(<span class="keywordtype">int</span> minimo, <span class="keywordtype">int</span> maximo, <span class="keywordtype">int</span> paragem) {</div><div class="line">    <span class="keywordtype">int</span> userinput = 0;</div><div class="line"></div><div class="line">    <span class="keywordflow">if</span> (maximo &lt; minimo) <span class="keywordflow">return</span> 0;</div><div class="line"></div><div class="line">    scanf(<span class="stringliteral">&quot;%d&quot;</span>,&amp;userinput);</div><div class="line">    <span class="keywordflow">if</span> (userinput == paragem) </div><div class="line">        <span class="keywordflow">return</span> paragem;</div><div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (userinput &gt;= minimo &amp;&amp; userinput &lt;= maximo ) </div><div class="line">        <span class="keywordflow">return</span> userinput;</div><div class="line">    <span class="keywordflow">else</span></div><div class="line">        <span class="keywordflow">return</span> 0;</div><div class="line">}</div></div><!-- fragment --><h2>Questão 11</h2>
+<p>O pedido é a implementação do algoritmo criado na questão 7, mas utilizando uma função para verificar se o numero é primo. Essa abordagem já foi tida em conta na questão 7 pelo que apenas foi compilado o executavel questao10 usando toda a estrutura da questao 7 </p><div class="fragment"><div class="line">gcc -o ../bin/questao10 ../questao07/main.c ../questao07/funcoes07.c -O3 -g3  -W -Wall -Wextra -Wuninitialized -Wstrict-aliasing</div></div><!-- fragment --><h2>Questão 12</h2>
+<p>Foi feita uma abordagem ao problema o mais abstrata possivel de forma a que futuras alterações no algoritmo possa a surgir sem ter de se refazer todo o codigo. De forma a simplificar a leitura de codigo foi utilizada um enum para identificar qual o apontador no array que pertence a cada tipo de temperatura</p>
+<div class="fragment"><div class="line"><span class="keyword">enum</span> <a class="code" href="../../d3/da4/questao12_8h.html#ab4d0c9c873ef3f69e97b69a07a4ef17c">tipo_temperatura</a> {</div><div class="line">    <a class="code" href="../../d3/da4/questao12_8h.html#ab4d0c9c873ef3f69e97b69a07a4ef17ca61957766178c4a982fd791b7e4b14661">ENUM_C</a>  = 0,</div><div class="line">    <a class="code" href="../../d3/da4/questao12_8h.html#ab4d0c9c873ef3f69e97b69a07a4ef17ca530d16f6a805446749310a840c4fa692">ENUM_K</a>  = 1,</div><div class="line">};</div></div><!-- fragment --><p>Numa primeira fase do programa é lido um caracter K ou C conforme o que o utilizador pretenda inserir </p><div class="fragment"><div class="line"><span class="comment">// Escala a ler</span></div><div class="line"><span class="keywordtype">char</span> escala = <a class="code" href="../../d6/d28/questao06_2main_8c.html#a7d12f3bc38c33ced51933af093951f0e">lerChar</a>(<span class="stringliteral">&quot;Insira a escala [K]elvin ou [C]elsius: &quot;</span>,<span class="stringliteral">&quot; %1[kKcC]&quot;</span>);</div><div class="line"><span class="keywordtype">int</span> escala_orig = (escala == <span class="charliteral">&#39;K&#39;</span> ? <a class="code" href="../../d3/da4/questao12_8h.html#ab4d0c9c873ef3f69e97b69a07a4ef17ca530d16f6a805446749310a840c4fa692">ENUM_K</a> : <a class="code" href="../../d3/da4/questao12_8h.html#ab4d0c9c873ef3f69e97b69a07a4ef17ca61957766178c4a982fd791b7e4b14661">ENUM_C</a>);</div><div class="line"><span class="keywordtype">int</span> escala_dest = (escala == <span class="charliteral">&#39;K&#39;</span> ? <a class="code" href="../../d3/da4/questao12_8h.html#ab4d0c9c873ef3f69e97b69a07a4ef17ca61957766178c4a982fd791b7e4b14661">ENUM_C</a> : <a class="code" href="../../d3/da4/questao12_8h.html#ab4d0c9c873ef3f69e97b69a07a4ef17ca530d16f6a805446749310a840c4fa692">ENUM_K</a>);</div></div><!-- fragment --><p> Mediante o tipo de leituras pedido pelo utilizador atribui-se à variavel escala_orig o valor da escala que será inserida.</p>
+<p>O array terá a seguinte forma:</p>
+<p><b>LEITURA CELSIUS (ENUM_C = 0)</b> </p><div class="fragment"><div class="line">temperaturas[LINHA][<a class="code" href="../../d3/da4/questao12_8h.html#ab4d0c9c873ef3f69e97b69a07a4ef17ca61957766178c4a982fd791b7e4b14661">ENUM_C</a>] = temperaturas[LINHA][0]</div></div><!-- fragment --><p><b>LEITURA KELVIN (ENUM_C = 1)</b> </p><div class="fragment"><div class="line">temperaturas[LINHA][<a class="code" href="../../d3/da4/questao12_8h.html#ab4d0c9c873ef3f69e97b69a07a4ef17ca530d16f6a805446749310a840c4fa692">ENUM_K</a>] = temperaturas[LINHA][1]</div></div><!-- fragment --><h2>Questão 13</h2>
+<p>Fiz uma abordagem ao problema separando a layer de leitura de sensores da layer de dashboard.</p><ul>
+<li>O ficheiro main.c dará origem ao programa que faz toda a layer de dashboard</li>
+<li>O ficheiro <a class="el" href="../../de/dd6/main-sensor_8c.html">main-sensor.c</a> dará origem ao programa que fará entreda de leituras, foi pensado fazer a abordagem de leituras via TCP/IP no entanto e dada a falta de tempo foi implementada pela linha de comandos pelo argumentos do programa. Logo para inserir uma leitura apenas será necessário: <div class="fragment"><div class="line">./questao13-sensor 6 53</div></div><!-- fragment --> onde o valor <b>6</b> é o codigo do sensor e o valor 53 é a leitura</li>
+</ul>
+<p>Este tipo de programas são mais simples de abordar utilizando sistemas de bases de dados, pois é mais facil manter integridade de dados, no entanto foi utilizado ficheiros binários de forma a permitir um acesso fácil e rápido.</p>
+<p>Na pasta bin/ existem 3 ficheiros .dat que podem ser utilizados pois tem dados dummies para testes.</p>
+<h1>Bibliografia</h1>
+<ul>
+<li>Crivo de Eratóstenes (<a href="https://pt.wikipedia.org/wiki/Crivo_de_Erat%C3%B3stenes">https://pt.wikipedia.org/wiki/Crivo_de_Erat%C3%B3stenes</a>)</li>
+<li>GNU coding standards (<a href="https://www.gnu.org/prep/standards/">https://www.gnu.org/prep/standards/</a>)</li>
+</ul>
+<h1>Utilitários Utilizados</h1>
+<ul>
+<li>Mermaid Diagrams (<a href="https://github.com/knsv/mermaid">https://github.com/knsv/mermaid</a>)</li>
+<li>Markdown Editor (<a href="https://stackedit.io/">https://stackedit.io/</a>)</li>
+<li>GIT - Repositório Privado (<a href="https://bitbucket.org/nargotik/trabalho1-lp1-aed1/">https://bitbucket.org/nargotik/trabalho1-lp1-aed1/</a>)</li>
+</ul>
+<h1>Enunciados</h1>
+<h2>INSTRUÇÕES DE DECISÃO</h2>
+<ul>
+<li><em><b>(não deve usar instruções de repetição nem estruturas)</b></em> <h3>Questão 01</h3>
+</li>
+</ul>
+<p>Crie uma aplicação que solicite a idade de 5 pessoas, apresente a média dessas idades e a soma das idades acima dos 20 anos.</p>
+<h3>Questão 02</h3>
+<p>Uma instituição bancária pretende oferecer aos seus melhores e mais antigos clientes um prémio em juros de 1% sobre o saldo médio da sua conta durante o ano. Para que possa ser atribuído o prémio, os clientes têm se satisfazer as seguintes condições conjuntamente:</p>
+<ul>
+<li>O saldo médio tem que ser igual ou superior a 100.000 euros; e</li>
+<li>A conta tem que existir há mais de 10 anos.</li>
+</ul>
+<p>Além deste prémio o banco está a oferecer também, podendo ser acrescido ao primeiro, um prémio de acordo com o tipo de conta do cliente e conforme a seguinte tabela: </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone" colspan="3">Codigo   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">1  </td><td class="markdownTableBodyNone">Empresarial Gold  </td><td class="markdownTableBodyNone">150   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone">2  </td><td class="markdownTableBodyNone">Empresarial Silver  </td><td class="markdownTableBodyNone">100   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">3  </td><td class="markdownTableBodyNone">Particular Gold  </td><td class="markdownTableBodyNone">75   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone">4  </td><td class="markdownTableBodyNone">Particular Silver  </td><td class="markdownTableBodyNone">40   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">5  </td><td class="markdownTableBodyNone">Outros  </td><td class="markdownTableBodyNone">0   </td></tr>
+</table>
+<p>Implemente uma aplicação que recolha os dados de um cliente, tais como o saldo médio, número de anos da conta e código de tipo de conta, e que apresente na consola um resumo com os dados recolhidos, juntamente com a descrição do tipo de conta e o valor total do prémio a que tem direito.</p>
+<h2>INSTRUÇÕES DE REPETIÇÃO</h2>
+<ul>
+<li><em><b>(não deve usar estruturas)</b></em> <h3>Questão 03</h3>
+</li>
+</ul>
+<p>Crie uma aplicação que solicite ao utilizador um número inteiro positivo n e que mostre ao utilizador o resultado do somatório dos inteiros pares existentes no intervalo [0;n].</p>
+<h3>Questão 04</h3>
+<p>Um número capicua é um número que pode ser lido tanto da esquerda para a direita, como da direita para a esquerda. O maior número capicua resultante do produto entre dois algarismos de dois dígitos é 9009 = 91 x 99. Desenvolva uma aplicação que encontre o maior número capicua resultante do produto entre dois algarismos de três dígitos.</p>
+<h3>Questão 05</h3>
+<p>Desenvolva um programa que receba os pesos de um conjunto indefenido de pessoas e que mostre na consola a quantidade de pessoas com peso entre 50 e 80 quilogramas. Reflita acerca da melhor condição de paragem para este caso.</p>
+<h3>Questão 06</h3>
+<p>Foi efetuado um questionário a um número indeterminado de estudantes numa universidade. A todos os estudantes foi solicitado o género, a idade e se está a gostar ou não do curso que está a frequentar. Implemente uma aplicação capaz de calcular e informar:</p><ul>
+<li>O número de estudantes entrevistados;</li>
+<li>Percentagem de estudantes de género feminino e masculino;</li>
+<li>Quantidade de estudantes de género masculino com menos de 23 anos e que não gostam do curso que estão a frequentar.</li>
+</ul>
+<h2>Questão 07</h2>
+<p>Proponha um programa capaz de gerar de forma automática e aleatória uma sequência de 100 números inteiros positivos entre 0 e 1000 e que apresente na consola a soma e média dos primos existentes na sequência gerada.</p>
+<h2>FUNÇÕES E PROCEDIMENTOS</h2>
+<ul>
+<li><em><b>(não deve usar arrays nem estruturas)</b></em></li>
+</ul>
+<h3>Questão 08</h3>
+<p>Reimplemente a questão 3 para que o cálculo do somatório seja efetuado dentro de uma sub-rotina.</p>
+<h3>Questão 09</h3>
+<p>Reimplemente a sub-rotina anterior de forma recursiva.</p>
+<h3>Questão 10</h3>
+<p>Reimplemente a questão 5 para que possa ser reutilizada noutros contextos, i.e. com outros intervalos de pesos.</p>
+<h3>Questão 11</h3>
+<p>Reimplemente a questão 7 para que o teste de verificação de primo seja feito através de uma função.</p>
+<h2>ARRAYS</h2>
+<h3>Questão 12</h3>
+<p>Desenvolva um programa que faça conversões entre as duas escalas de temperaturas, Kelvin, Celsius com base em dois valores de entrada: i) a escala de conversão pretendida; e ii) a lista das temperaturas. As entradas 38, ’K’, significam que o utilizador pretende converter a temperatura 38 Celsius para Kelvin.</p><ul>
+<li>O utilizador deverá poder introduzir n temperaturas;</li>
+<li>Deverá ser apresentada um quadro com todas as temperaturas inseridas e a respetiva conversão, indicando qual a escala de cada coluna apresentada;</li>
+</ul>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone" colspan="2">Kelv   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">10  </td><td class="markdownTableBodyNone">283   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone">...  </td><td class="markdownTableBodyNone">...   </td></tr>
+</table>
+<p>Considere as seguintes fórmulas: tempC = tempK – 273 e tempK = tempC + 273</p><ul>
+<li>Deverá ainda informar o utilizador acerca da média das temperaturas, assim como a maior e a menor delas, na escala original e de conversão;</li>
+</ul>
+<h2>ESTRUTURAS</h2>
+<h3>Questão 13</h3>
+<p>O IPCA quer instalar na biblioteca da escola um sistema que tem como objetivo auxiliar o controlo de ruído nas várias zonas da biblioteca.</p>
+<p>Este sistema consiste na instalação de vários sensores acústicos colocados em zonas estratégicas da biblioteca que comunicam leituras para um servidor. O sistema contempla também uma aplicação capaz de fazer a leitura dos dados fornecidos pelos sensores e fornecer informação variada resultante do seu processamento.</p>
+<p>Tendo em conta o desenvolvimento da aplicação, o IPCA convidou os alunos a apresentarem uma proposta de desenvolvimento da mesma.</p>
+<p>Da informação relativa a um sensor a aplicação deverá, além de identificar o sensor de forma única, identificar em que zona o sensor está instalado na biblioteca.</p>
+<p>Das leituras fornecidas pelos sensores, a aplicação deverá conseguir mostrar: i) o valor respeitante ao nível de ruído; ii) quando ocorreu a recolha pelo sensor (i.e. ano, mês, dia, hora, minuto e segundo); e iii) qual o sensor que efetuou a recolha da leitura em questão.</p>
+<p>A aplicação deve disponibilizar ao utilizador um dashboard com:</p><ul>
+<li>A quantidade de sensores instalados;</li>
+<li>A quantidade de leituras recolhidas por sensor;</li>
+<li>A leitura mínima e máxima recolhida na biblioteca;</li>
+<li>A média de ruído na biblioteca.</li>
+</ul>
+<p>O utilizador deve poder ainda:</p><ul>
+<li>Inserir e remover um sensor do sistema;</li>
+<li>Listar os valores de ruído de uma zona da biblioteca num determinado dia ordenados por valor do ruído descendentemente;</li>
+<li>Listar as médias de ruído da biblioteca por zona (por sensor). </li>
+</ul>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>
