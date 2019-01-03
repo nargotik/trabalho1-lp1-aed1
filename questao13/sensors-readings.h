@@ -10,7 +10,7 @@
 
 #include "sensors.h"
 
-#define MAX_LEITURAS 1000000
+#define MAX_LEITURAS 10000
 
 #define LEITURAS_FILENAME "leituras.dat"
 
