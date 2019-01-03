@@ -37,7 +37,7 @@ int main()
         sensores[i] = geraSensorRandom(aux_cod);
         
         // Gera um numero random de leituras
-        aux_leituras = MAX_LEITURAS / random_number(MAX_SENSORES / 2 , MAX_SENSORES);
+        aux_leituras = MAX_LEITURAS / random_number(MAX_SENSORES / 2 , MAX_SENSORES) / 1.7;
         
         parametros.total_leituras = totalLeituras();
         parametros.total_sensores = i+1;
