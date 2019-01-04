@@ -13,9 +13,9 @@ Este trabalho foi realizado tentando aprimorar os meus conhecimentos a nível de
  - **Código Auxiliar**
 	 - /questao**XX**/funcoes**XX**.c (Funções utilizadas na função XX)
  - **Documentação Automática**
-         – /doc/index.html (Documentação gerada com o doxygen)
+	 - /doc/index.html (Documentação gerada com o doxygen)
  - **Relatório**
-         – /relatorio/
+	 - /relatorio/
 
 
 
