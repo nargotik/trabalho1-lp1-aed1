@@ -74,10 +74,18 @@ void mostraOpcao(int opcao,char* msg) {
  */
 void clearScreen() {
 #ifdef LINUX
-    (void)system("clear");
+    // Limpa o ecrã
+    printf("\x1B[2J");
+    // Põe o cursor no topo
+    printf("\x1B[1H");
+    //(void)system("clear");
 #endif
 #ifdef WINDOWS
-    (void)system("cls");
+    // Limpa o ecrã
+    printf("\x1B[2J");
+    // Põe o cursor no topo
+    printf("\x1B[1H");
+    //(void)system("cls");
 #endif
 }
 
