@@ -5,6 +5,8 @@
 
 Este trabalho foi realizado tentando aprimorar os meus conhecimentos a nível de estrutura e organização de código em c.
 
+[![Build Status](https://travis-ci.com/nargotik/trabalho1-lp1-aed1.svg?branch=master)](https://travis-ci.com/nargotik/trabalho1-lp1-aed1)
+
 ## Ficheiros
 
  - **Código Principal**
